@@ -1,0 +1,156 @@
+#!/usr/bin/env bash
+
+# Driver for compiling and running advent of code binaries.
+
+###############################################
+# VERSION INFORMATION                         #
+###############################################
+
+AOC_VERSION="v0.1.0"
+
+usage() {
+    echo "Usage: $(basename $0)"
+    echo
+    exit 1
+}
+
+version() {
+    echo "${BASH_SOURCE[0]} $AOC_VERSION"
+}
+
+###############################################
+# LOGGERS
+###############################################
+
+fatal() {
+    echo -e "[\033[31m-\033[0m] FATAL: $1"
+    exit 1
+}
+
+###############################################
+#   UTILITIES
+###############################################
+
+# Get the root of the repository using a series of ordered metrics.
+get-root() {
+    local -a precedence=(.git .gitignore README.md)
+    local cwd="$PWD"
+
+    while [[ "$cwd" != "/" ]]; do
+        # Check precedence
+        for file in "${precedence[@]}"; do
+            if [[ -e "$cwd"/"$file" ]]; then
+                echo "$cwd"
+                return 0
+            fi
+        done
+
+        # Go up one
+        cwd=$(dirname "$cwd")
+    done
+
+    # Nothing found
+    echo ""
+    return 1
+}
+
+# Fetch input data from AOC itself
+fetch-input() {
+    # Rename arguments
+    local year="$1"
+    local date="$2"
+
+    echo "Fetching: ${year@A} ${date@A}"
+}
+
+# Get the script name for a language
+aoc-run() {
+    # Rename arguments
+    local year="$1"
+    local date="$2"
+    local lang="$3"
+
+    # Check if it exists
+    local srcfile=src/"$year"/day-"$date"/main."$lang"
+    [[ -f "$srcfile" ]] || fatal "missing ${lang^} script: ${year@A} ${date@A}"
+    echo "$srcfile"
+}
+
+###############################################
+#   LANGUAGE COMPILERS
+###############################################
+
+aoc-bash() {
+    # Rename arguments
+    local year="$1"
+    local date="$2"
+
+    # Get the library
+    . src/lib/aoclib.bash
+
+    # Run the script
+    . $(aoc-run "$year" "$date" bash)
+}
+
+aoc-c() {
+    # Rename arguments
+    local year="$1"
+    local date="$2"
+
+    # Check if we have bear
+    command -v bear >/dev/null || fatal "c: missing command: bear"
+
+    # Run the makefile
+    cd src || return $?
+    bear -- make "$year" "$date"
+
+    # Run the binary
+    ./bin/"$year"/"$year"-"$date"
+}
+
+aoc-python() {
+    # Rename arguments
+    local year="$1"
+    local date="$2"
+
+    # Get the library path
+    export PYTHONPATH="src/lib"
+
+    # Run the script
+    ./$(aoc-run "$year" "$date" py)
+}
+
+###############################################
+#   DRIVERS
+###############################################
+
+# Autocompletion for the AOC command
+_aoc() {
+    echo
+}
+
+aoc() {
+    # Sanity check
+    (($# == 3)) || usage
+
+    # Rename arguments
+    local command="$1"
+    local year="$2"
+    local date=$(printf "%02d" "$3")
+
+    # Go to project root
+    cd $(get-root) || return $?
+
+    case "$command" in
+        # Named commands
+        asm | bash | c | python) aoc-"$command" "$year" "$date" ;;
+        # Aliases
+        py) aoc-python "$year" "$date" ;;
+        # Utilities
+        fetch) aoc-fetch "$@" ;;
+        *) fatal "Unknown command: $command" ;;
+    esac
+}
+
+complete -F _aoc aoc
+aoc "$@"
