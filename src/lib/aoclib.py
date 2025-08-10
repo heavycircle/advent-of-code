@@ -5,8 +5,10 @@ Advent of Code Python utilities.
 from os import getcwd
 from pathlib import Path
 
+
 def __version__():
     return "v0.1.0"
+
 
 def get_data(year: int, day: int) -> str:
     """
@@ -20,6 +22,7 @@ def get_data(year: int, day: int) -> str:
     cwd = Path(getcwd())
     infile = cwd / "input" / str(year) / f"day-{day:02d}.txt"
     if not infile.exists():
-        raise FileNotFoundError(f"missing input file: year={year} day={day}")
+        print(f"get_data: missing input file: year={year} day={day}")
+        exit(1)
 
     return infile.read_text().strip()

@@ -1,15 +1,48 @@
 #!/usr/bin/env bash
 
-# Driver for compiling and running advent of code binaries.
+set -eu
 
 ###############################################
-# VERSION INFORMATION                         #
+#   VERSION INFORMATION                       #
 ###############################################
 
 AOC_VERSION="v0.1.0"
 
 usage() {
-    echo "Usage: $(basename $0)"
+    echo "Usage: $(basename $0) COMMAND YEAR DATE"
+    echo
+    echo "Compile and Run AoC code."
+    echo
+    echo "This program supports a variety of programs and was designed to make"
+    echo "running code as quick as possible. After all, we're time constrained"
+    echo "on game day :)"
+    echo
+    echo "The current supported languages are listed below."
+    echo
+    echo "LANGUAGE RUNNERS"
+    echo "    asm       Build and run the ASM binary linked against aoclib."
+    echo "    bash      Source the bash script after sourcing aoclib."
+    echo "    c         Build and run the C binary linked against aoclib."
+    echo "    python    Run the Python script with aoclib in PYTHONPATH."
+    echo
+    echo "UTILITIES"
+    echo "    fetch     Get the custom input file for the specified year and"
+    echo "              date and place it in the input/ directory."
+    echo "    init      Build a directory for the specified year and date, and"
+    echo "              generate basic skeletons for the supported languages"
+    echo "              listed above"
+    echo "    readme    Update the number of solves in the README based on the"
+    echo "              number of files inside each of the directories."
+    echo
+    echo "ARGUMENTS"
+    echo "    YEAR      The challenge year. Should be a year after 2015, but"
+    echo "              is not currently sanitized."
+    echo "    DATE      The challenge date. Should be a number 1-25, but is"
+    echo "              not currently sanitized."
+    echo
+    echo "OPTIONS"
+    echo "    -h        Display this help message."
+    echo "    -v        Verbose output."
     echo
     exit 1
 }
@@ -19,16 +52,21 @@ version() {
 }
 
 ###############################################
-# LOGGERS
+#   LOGGERS                                   #
 ###############################################
 
 fatal() {
-    echo -e "[\033[31m-\033[0m] FATAL: $1"
+    echo -e "[\033[31m-\033[0m] FATAL: $1" >&2
     exit 1
 }
 
+debug() {
+    (($DEBUG == 1)) || return 0
+    echo -e "[\033[32m+\033[0m] $1" >&2
+}
+
 ###############################################
-#   UTILITIES
+#   UTILITIES                                 #
 ###############################################
 
 # Get the root of the repository using a series of ordered metrics.
@@ -54,74 +92,78 @@ get-root() {
     return 1
 }
 
-# Fetch input data from AOC itself
-fetch-input() {
-    # Rename arguments
-    local year="$1"
-    local date="$2"
-
-    echo "Fetching: ${year@A} ${date@A}"
-}
-
 # Get the script name for a language
 aoc-run() {
-    # Rename arguments
-    local year="$1"
-    local date="$2"
-    local lang="$3"
+    local lang="$1"
 
     # Check if it exists
-    local srcfile=src/"$year"/day-"$date"/main."$lang"
-    [[ -f "$srcfile" ]] || fatal "missing ${lang^} script: ${year@A} ${date@A}"
+    local srcfile=src/"$YEAR"/day-"$DATE"/main."$lang"
+    [[ -f "$srcfile" ]] || fatal "missing ${lang^} script: ${YEAR@A} ${DATE@A}"
     echo "$srcfile"
 }
 
+# Prepare to run a language compiler.
+aoc-lang() {
+    # Globals
+    declare -g YEAR="$2"
+    declare -g DATE=$(printf "%02d" "$3")
+
+    # Run the language-specific compiler
+    local lang="$1"
+    aoc-"$lang"
+}
+
+# Run a utility script.
+aoc-util() {
+    # Get the command
+    local command="$1"
+
+    source utils/aoc-"$command" "$@"
+}
+
 ###############################################
-#   LANGUAGE COMPILERS
+#   LANGUAGE COMPILERS                        #
 ###############################################
+
+aoc-asm() {
+    debug "asm: building: ${YEAR@A} ${DATE@A}"
+    debug "asm: running: ${YEAR@A} ${DATE@A}"
+}
 
 aoc-bash() {
-    # Rename arguments
-    local year="$1"
-    local date="$2"
-
     # Get the library
     . src/lib/aoclib.bash
 
     # Run the script
-    . $(aoc-run "$year" "$date" bash)
+    debug "bash: running: ${YEAR@A} ${DATE@A}"
+    . $(aoc-run bash)
 }
 
 aoc-c() {
-    # Rename arguments
-    local year="$1"
-    local date="$2"
-
     # Check if we have bear
     command -v bear >/dev/null || fatal "c: missing command: bear"
 
     # Run the makefile
+    debug "c: building: ${YEAR@A} ${DATE@A}"
     cd src || return $?
-    bear -- make "$year" "$date"
+    bear -- make "$YEAR" "$DATE"
 
     # Run the binary
-    ./bin/"$year"/"$year"-"$date"
+    debug "c: running: ${YEAR@A} ${DATE@A}"
+    ./bin/"$YEAR"/"$YEAR"-"$DATE"
 }
 
 aoc-python() {
-    # Rename arguments
-    local year="$1"
-    local date="$2"
-
     # Get the library path
     export PYTHONPATH="src/lib"
 
     # Run the script
-    ./$(aoc-run "$year" "$date" py)
+    debug "python: running: ${YEAR@A} ${DATE@A}"
+    ./$(aoc-run py)
 }
 
 ###############################################
-#   DRIVERS
+#   DRIVERS                                   #
 ###############################################
 
 # Autocompletion for the AOC command
@@ -130,24 +172,37 @@ _aoc() {
 }
 
 aoc() {
-    # Sanity check
-    (($# == 3)) || usage
+    local -a positional
 
-    # Rename arguments
+    # Default arguments
+    declare -g DEBUG=0
+
+    # Parse flags
+    while (($# > 0)); do
+        case "$1" in
+            -h | --help) usage ;;
+            -v | --verbose) DEBUG=1 ;;
+            -* | --*) fatal "unknown argument: $1" ;;
+            *) positional+=("$1") ;;
+        esac
+        shift
+    done
+
+    # Reset positionals
+    set -- "${positional[@]}"
     local command="$1"
-    local year="$2"
-    local date=$(printf "%02d" "$3")
+    shift
 
     # Go to project root
     cd $(get-root) || return $?
 
     case "$command" in
         # Named commands
-        asm | bash | c | python) aoc-"$command" "$year" "$date" ;;
+        asm | bash | c | python) aoc-lang "$command" "$@" ;;
         # Aliases
-        py) aoc-python "$year" "$date" ;;
+        py) aoc-python "python" "$@" ;;
         # Utilities
-        fetch) aoc-fetch "$@" ;;
+        fetch | init | readme) aoc-util "$command" "$@" ;;
         *) fatal "Unknown command: $command" ;;
     esac
 }

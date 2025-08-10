@@ -1,5 +1,6 @@
 # Python build files
 .venv
+__pycache__
 
 # C build files
 build/

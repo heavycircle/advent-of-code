@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+usage() {
+    echo "Usage: $(basename $0) YEAR DATE"
+    echo
+    echo "Fetch AoC custom input files from the AoC remote host."
+    echo
+    echo "ARGUMENTS"
+    echo "    YEAR      The challenge year. Should be a year after 2015, but"
+    echo "              is not currently sanitized."
+    echo "    DATE      The challenge date. Should be a number 1-25, but is"
+    echo "              not currently sanitized."
+    echo
+    echo "OPTIONS"
+    echo "    -h        Display this help message."
+    echo "    -v        Verbose program output."
+    echo
+    exit 0
+}
+
+main() {
+    # Rename arguments
+    local year="$1"
+    local date="$2"
+
+    debug "Fetching: ${year@A} ${date@A}"
+}
+
+main "$@"

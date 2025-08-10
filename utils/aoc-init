@@ -1,0 +1,165 @@
+#!/usr/bin/env bash
+
+set -eu
+
+# Supported languages
+LANGS=(asm bash c python)
+
+###############################################
+# USAGE
+###############################################
+
+usage() {
+    echo "Usage: $(basename ${BASH_SOURCE[0]}) YEAR DATE"
+    echo
+    echo "Generate source files for an AoC Date."
+    echo
+    echo "POSITIONAL ARGUMENTS"
+    echo "    YEAR  Year of the challenge."
+    echo "    DATE  Date of the challenge."
+    echo
+    echo "FLAGS"
+    echo "    -h    Display this help message."
+    echo
+    exit 0
+}
+
+###############################################
+# LOGGERS
+###############################################
+
+fatal() {
+    echo -e "[\033[31m-\033[0m] $(basename ${BASH_SOURCE[0],,}): $1"
+    exit 1
+}
+
+debug() {
+    (($DEBUG == 1)) || return 0
+    echo -e "[\033[32m+\033[0m] $1"
+}
+
+###############################################
+# LANGUAGE GENERATORS
+###############################################
+
+gen-asm() {
+    local file="$BUILD_DIR"/"main.asm"
+
+    # Write the file
+    cat >"$file" <<EOF || true
+BITS 64
+
+section .text
+
+global _start
+
+_start:
+    ; exit(0)
+    mov rax, 60
+    xor rdi, rdi
+    syscall
+EOF
+}
+
+gen-bash() {
+    local file="$BUILD_DIR"/"main.bash"
+
+    # Write the file
+    cat >"$file" <<EOF || true
+#!/usr/bin/env bash
+
+data=\$(get-data $YEAR $DATE)
+echo "\$data"
+EOF
+
+    # Mark executable (script)
+    chmod +x "$file"
+}
+
+gen-c() {
+    local file="$BUILD_DIR"/"main.c"
+
+    # Write the file
+    cat >"$file" <<EOF || true
+#include <aoclib.h>
+#include <stdio.h>
+
+int main(void)
+{
+    // Get the date. Function kills if non-existent.
+    FILE *fp = get_data($YEAR, $DATE);
+
+    fclose(fp);
+    return 0;
+}
+EOF
+}
+
+gen-python() {
+    local file="$BUILD_DIR"/"main.py"
+
+    # Write the file
+    cat >"$file" <<EOF || true
+#!/usr/bin/env python3
+
+import aoclib
+
+data = aoclib.get_data(year=$YEAR, day=$DATE)
+print(data)
+EOF
+
+    # Mark executable (script)
+    chmod +x "$file"
+}
+
+###############################################
+# DRIVERS
+###############################################
+
+main() {
+    local -a positional
+    declare -g YEAR DATE DEBUG=0
+
+    # Use get-root if possible
+    if command -v get-root >/dev/null 2>&1; then
+        cd $(get-root)
+    else
+        local root=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
+        cd "$(dirname "$root")"
+    fi
+
+    # Drain flags
+    while (($# > 0)); do
+        case "$1" in
+            -h | --help) usage ;;
+            -v | --verbose) DEBUG=1 ;;
+            -* | --*) fatal "unknown argument: $1" ;;
+            *) positional+=("$1") ;;
+        esac
+
+        shift
+    done
+
+    # Positional arguments
+    set -- "${positional[@]}"
+    (($# == 2)) || fatal "incorrect argument count!"
+    YEAR="$1"
+    DATE="$2"
+
+    # Make the directory
+    declare -g BUILD_DIR=src/"$YEAR"/day-"$(printf "%02d" "$DATE")"
+    [[ -d "$BUILD_DIR" ]] && fatal "directory already exists: $BUILD_DIR"
+    mkdir -p "$BUILD_DIR"
+
+    # Build each language
+    local lang
+    for lang in "${LANGS[@]}"; do
+        debug "Generating ${lang^} . . ."
+        gen-"$lang"
+    done
+
+    # Always print complete
+    DEBUG=1 debug "Task Complete!"
+}
+
+main "$@"
