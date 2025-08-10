@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+set -eu
+
+###############################################
+#   USAGE                                     #
+###############################################
+
 usage() {
     echo "Usage: $(basename $0) YEAR DATE"
     echo
@@ -18,12 +24,68 @@ usage() {
     exit 0
 }
 
+###############################################
+#   LOGGERS                                   #
+###############################################
+
+fatal() {
+    echo -e "[\033[31m-\033[0m] $(basename ${BASH_SOURCE[0],,}): $1"
+    exit 1
+}
+
+debug() {
+    (($DEBUG == 1)) || return 0
+    echo -e "[\033[32m+\033[0m] $1"
+}
+
+###############################################
+#   DRIVERS                                   #
+###############################################
+
 main() {
-    # Rename arguments
+    local -a positional
+    declare -g DEBUG=0
+
+    # Go to the root
+    local root=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
+    cd "$(dirname "$root")"
+
+    # Drain flags
+    while (($# > 0)); do
+        case "$1" in
+            -h | --help) usage ;;
+            -v | --verbose) DEBUG=1 ;;
+            -* | --*) fatal "unknown argument: $1" ;;
+            *) positional+=("$1") ;;
+        esac
+
+        shift
+    done
+
+    # Positional arguments
+    set -- "${positional[@]}"
+    (($# == 2)) || fatal "incorrect argument count!"
     local year="$1"
     local date="$2"
 
     debug "Fetching: ${year@A} ${date@A}"
+
+    # Get AOC_TOKEN from environment
+    source utils/aoc-session
+    [[ -n "$AOC_SESSION" ]] || fatal "missing AOC_SESSION env"
+
+    # Output location
+    local outfile=input/"$year"/day-"$(printf "%02d" "$date")".txt
+    [[ -f "$outfile" ]] && fatal "file exists: $outfile"
+    mkdir -p "$(dirname "$outfile")"
+
+    # cURL the contents
+    curl -sS --fail-with-body \
+        -H "Cookie: session=${AOC_SESSION}" \
+        -H "User-Agent: heavycircle (+https://github.com/heavycircle)" \
+        "https://adventofcode.com/$year/day/$date/input" -o "$outfile"
+
+    DEBUG=1 debug "file retrieved: $outfile"
 }
 
 main "$@"

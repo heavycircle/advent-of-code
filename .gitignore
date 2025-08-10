@@ -9,3 +9,6 @@ compile_commands.json
 
 # Input files
 input/
+
+# AOC_SESSION env
+utils/aoc-session

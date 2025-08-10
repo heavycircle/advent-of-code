@@ -117,6 +117,7 @@ aoc-lang() {
 aoc-util() {
     # Get the command
     local command="$1"
+    shift
 
     source utils/aoc-"$command" "$@"
 }
@@ -200,7 +201,7 @@ aoc() {
         # Named commands
         asm | bash | c | python) aoc-lang "$command" "$@" ;;
         # Aliases
-        py) aoc-python "python" "$@" ;;
+        py) aoc-lang "python" "$@" ;;
         # Utilities
         fetch | init | readme) aoc-util "$command" "$@" ;;
         *) fatal "Unknown command: $command" ;;
