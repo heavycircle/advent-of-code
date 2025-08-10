@@ -10,10 +10,10 @@ My goal is to solve each challenge using multiple languages to provide the most 
 
 | **Language** | **Solves** |
 | ------------ | ---------- |
-| ASM          | 2          |
+| ASM          | 5          |
 | Bash         | 2          |
-| C            | 2          |
-| Python       | 2          |
+| C            | 28         |
+| Python       | 97         |
 
 # Challenge Calendars
 

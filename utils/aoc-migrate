@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+
+# Usage: aoc-migrate
+#
+# Migrate the old working directory layout to the new one.
+#
+# The old format was LANG/YEAR/dayDAY.ext.
+# The new format is YEAR/day-DAY/main.ext.
+
+set -eu
+
+main() {
+    # Go to the root
+    local root=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
+    cd "$(dirname "$root")"
+
+    local -a olddirs=(ASM C Python)
+
+    for dir in "${olddirs[@]}"; do
+        # Get the file list
+        for subdir in ${dir}/*; do
+            [[ -d "$subdir" && "${subdir##*/}" =~ ^[0-9]+$ ]] || continue
+
+            # Get source files here
+            for file in "$subdir"/*.*; do
+                # Get information
+                local year=${subdir##*/}
+                local day=${file##*day}
+                day=${day%.*}
+                local ext=${file##*.}
+
+                # Get source and destination
+                local src="$file"
+                local dst=src/"$year"/day-"$day"/main."$ext"
+                [[ -f "$dst" ]] && echo "file exists: $dst"
+                echo "$src -> $dst"
+
+                # Make directory before copying
+                mkdir -p "$(dirname "$dst")"
+                cp "$src" "$dst"
+            done
+        done
+    done
+}
+
+main "$@"
