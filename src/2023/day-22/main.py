@@ -1,10 +1,12 @@
+#!/usr/bin/env python3
+
 """
 --- Day 22: Sand Slabs ---
 """
 
-from aocd import get_data
+import aoclib
 
-stream = get_data(day=22, year=2023).splitlines()
+stream = aoclib.get_data(day=22, year=2023).splitlines()
 data = [[list(map(int, y.split(","))) for y in l.split("~")] for l in stream]
 
 gg, bd, bu, br = {}, {}, {}, []

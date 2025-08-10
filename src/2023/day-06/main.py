@@ -1,12 +1,14 @@
+#!/usr/bin/env python3
+
 """
 --- Day 6: Wait For It ---
 """
 
 from functools import reduce
 
-from aocd import get_data
+import aoclib
 
-data = get_data(day=6, year=2023).split("\n")
+data = aoclib.get_data(day=6, year=2023).splitlines()
 times = list(map(int, data[0].split(":")[1].strip().split()))
 dists = list(map(int, data[1].split(":")[1].strip().split()))
 

@@ -1,9 +1,11 @@
+#!/usr/bin/env python3
+
 """
 --- Day 13: Point of Incidence ---
 """
 
+import aoclib
 import numpy as np
-from aocd import get_data
 
 
 def symmetry(arr, margin):
@@ -23,7 +25,7 @@ def symmetry(arr, margin):
     return False
 
 
-stream = get_data(day=13, year=2023).split("\n\n")
+stream = aoclib.get_data(day=13, year=2023).split("\n\n")
 stream = [line.splitlines() for line in stream]
 
 for l in stream:

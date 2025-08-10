@@ -1,11 +1,13 @@
+#!/usr/bin/env python3
+
 """
 --- Day 18: Lavaduct Lagoon ---
 """
 
-from aocd import get_data
+import aoclib
 from skspatial.measurement import area_signed
 
-stream = get_data(day=18, year=2023).splitlines()
+stream = aoclib.get_data(day=18, year=2023).splitlines()
 data = [line.split() for line in stream]
 
 code = {"0": "R", "1": "D", "2": "L", "3": "U"}

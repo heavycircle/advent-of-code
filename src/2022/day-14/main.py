@@ -1,10 +1,12 @@
+#!/usr/bin/env python3
+
 """
 --- Day 14: Regolith Reservoir ---
 """
 
-from aocd import get_data
+import aoclib
 
-stream = get_data(day=14, year=2022).splitlines()
+stream = aoclib.get_data(day=14, year=2022).splitlines()
 
 data = [[[int(z) for z in y.split(",")] for y in x.split("->")] for x in stream]
 

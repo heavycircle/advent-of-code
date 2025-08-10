@@ -1,12 +1,14 @@
+#!/usr/bin/env python3
+
 """
 --- Day 13: Knights of the Dinner Table ---
 """
 
 from itertools import permutations
 
-from aocd import get_data
+import aoclib
 
-stream = get_data(day=13, year=2015).splitlines()
+stream = aoclib.get_data(day=13, year=2015).splitlines()
 
 hh = {}
 for line in stream:

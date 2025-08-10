@@ -1,8 +1,10 @@
+#!/usr/bin/env python3
+
 """
 --- Day 22: Monkey Market ---
 """
 
-from aocd import get_data
+import aoclib
 
 
 def get_random(s):
@@ -13,7 +15,7 @@ def get_random(s):
     return s
 
 
-data = get_data(day=22, year=2024)
+data = aoclib.get_data(day=22, year=2024)
 nums = map(int, data.splitlines())
 
 ONE = 0

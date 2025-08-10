@@ -1,8 +1,10 @@
+#!/usr/bin/env python3
+
 import re
 
-from aocd import get_data
+import aoclib
 
-data = get_data(day=14, year=2024)
+data = aoclib.get_data(day=14, year=2024)
 
 g = [0 for _ in range(4)]
 for l in data.splitlines():

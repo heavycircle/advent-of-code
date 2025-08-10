@@ -1,10 +1,12 @@
+#!/usr/bin/env python3
+
 """
 --- Day 2: Rock Paper Scissors ---
 """
 
-from aocd import get_data
+import aoclib
 
-stream = get_data(day=14, year=2022)
+stream = aoclib.get_data(day=14, year=2022)
 
 
 def delta(a, b):
@@ -17,7 +19,7 @@ def react(a, b):
     return (ord(b) - 64 + ord(a) - 64 - 25) % 3
 
 
-d = [x.split() for x in stream.split("\n")]
+d = [x.split() for x in stream.splitlines()]
 ONE = 0
 for x, y in d:
     s = delta(x, y)

@@ -1,12 +1,14 @@
+#!/usr/bin/env python3
+
 """
 --- Day 5: Doesn't He Have Intern-Elves For This? ---
 """
 
 import re
 
-from aocd import get_data
+import aoclib
 
-stream = get_data(day=5, year=2015).splitlines()
+stream = aoclib.get_data(day=5, year=2015).splitlines()
 
 ONE = 0
 for line in stream:

@@ -1,10 +1,12 @@
+#!/usr/bin/env python3
+
 """
 --- Day 4: Ceres Search ---
 """
 
-from aocd import get_data
+import aoclib
 
-data = get_data(day=4, year=2024)
+data = aoclib.get_data(day=4, year=2024)
 search = []
 for ln in data.splitlines():
     search.append(list(ln.strip()))

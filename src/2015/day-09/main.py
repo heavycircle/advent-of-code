@@ -1,10 +1,12 @@
+#!/usr/bin/env python3
+
 """
 --- Day 9: All in a Single Night ---
 """
 
-from aocd import get_data
+import aoclib
 
-stream = get_data(day=9, year=2015).splitlines()
+stream = aoclib.get_data(day=9, year=2015).splitlines()
 data = [x.split() for x in stream]
 
 cities = set()

@@ -1,12 +1,14 @@
+#!/usr/bin/env python3
+
 """
 --- Day 11: Cosmic Expansion ---
 """
 
 import itertools
 
-from aocd import get_data
+import aoclib
 
-stream = get_data(day=11, year=2023).splitlines()
+stream = aoclib.get_data(day=11, year=2023).splitlines()
 
 
 def shortest_path(pair):

@@ -1,10 +1,12 @@
+#!/usr/bin/env python3
+
 """
 --- Day 6: Guard Gallivant ---
 """
 
-from aocd import get_data
+import aoclib
 
-data = get_data(day=6, year=2024)
+data = aoclib.get_data(day=6, year=2024)
 
 # Make grid
 grid = [list(x) for x in data.splitlines()]

@@ -1,12 +1,14 @@
+#!/usr/bin/env python3
+
 """
 --- Day 7: Camel Cards ---
 """
 
 import collections
 
-from aocd import get_data
+import aoclib
 
-lines = [x.strip() for x in get_data(day=7, year=2023).split("\n")]
+lines = [x.strip() for x in aoclib.get_data(day=7, year=2023).splitlines()]
 
 
 def one(h):

@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 """
 --- Day 24: It Hangs in the Balance ---
 """
@@ -6,9 +8,9 @@ from functools import reduce
 from itertools import combinations
 from operator import mul
 
-from aocd import get_data
+import aoclib
 
-stream = get_data(year=2015, day=24).splitlines()
+stream = aoclib.get_data(year=2015, day=24).splitlines()
 data = sorted(list(map(int, stream)), reverse=True)
 
 

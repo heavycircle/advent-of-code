@@ -1,13 +1,15 @@
+#!/usr/bin/env python3
+
 """
 --- Day 8: Treetop Tree House ---
 """
 
+import aoclib
 import numpy as np
-from aocd import get_data
 
-stream = get_data(day=14, year=2022)
+stream = aoclib.get_data(day=14, year=2022)
 
-lines = [l.strip() for l in stream.split("\n")]
+lines = [l.strip() for l in stream.splitlines()]
 
 trees = np.zeros((len(lines), len(lines[0])), dtype=int)
 for i, line in enumerate(lines):

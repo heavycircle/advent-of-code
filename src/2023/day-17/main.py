@@ -1,12 +1,14 @@
+#!/usr/bin/env python3
+
 """
 --- Day 17: Clumsy Crucible ---
 """
 
 from heapq import heappop, heappush
 
-from aocd import get_data
+import aoclib
 
-stream = get_data(day=17, year=2023).strip().splitlines()
+stream = aoclib.get_data(day=17, year=2023).strip().splitlines()
 
 data = [[int(y) for y in x] for x in stream]
 DIRS = [(0, 1), (1, 0), (0, -1), (-1, 0)]

@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 """
 --- Day 24: Crossed Wires ---
 """
@@ -5,9 +7,9 @@
 import operator
 import re
 
-from aocd import get_data
+import aoclib
 
-data = get_data(day=24, year=2024)
+data = aoclib.get_data(day=24, year=2024)
 W, G = data.split("\n\n")
 
 # Get wires

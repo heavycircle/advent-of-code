@@ -1,10 +1,12 @@
+#!/usr/bin/env python3
+
 """
 --- Day 6: Probably a Fire Hazard ---
 """
 
-from aocd import get_data
+import aoclib
 
-stream = get_data(day=6, year=2015).splitlines()
+stream = aoclib.get_data(day=6, year=2015).splitlines()
 grid = [[0 for _ in range(1000)] for _ in range(1000)]
 
 for line in stream:

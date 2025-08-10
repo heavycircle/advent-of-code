@@ -1,12 +1,14 @@
+#!/usr/bin/env python3
+
 """
 --- Day 3: Mull It Over ---
 """
 
 import re
 
-from aocd import get_data
+import aoclib
 
-data = get_data(day=3, year=2024)
+data = aoclib.get_data(day=3, year=2024)
 
 matches = re.findall(r"mul\((\d+),(\d+)\)", data)
 ONE = sum(int(x) * int(y) for x, y in matches)

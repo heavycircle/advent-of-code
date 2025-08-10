@@ -1,10 +1,12 @@
+#!/usr/bin/env python3
+
 """
 --- Day 20: Race Condition ---
 """
 
-from aocd import get_data
+import aoclib
 
-data = get_data(day=20, year=2024)
+data = aoclib.get_data(day=20, year=2024)
 
 
 def cheat(track, cap):

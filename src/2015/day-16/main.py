@@ -1,10 +1,12 @@
+#!/usr/bin/env python3
+
 """
 --- Day 16: Aunt Sue ---
 """
 
-from aocd import get_data
+import aoclib
 
-stream = get_data(year=2015, day=16).splitlines()
+stream = aoclib.get_data(year=2015, day=16).splitlines()
 
 goal = {
     "children": 3,

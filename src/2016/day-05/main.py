@@ -1,12 +1,14 @@
+#!/usr/bin/env python3
+
 """
 --- Day 5: How About a Nice Game of Chess? ---
 """
 
 from hashlib import md5
 
-from aocd import get_data
+import aoclib
 
-stream = get_data(year=2016, day=5).strip()
+stream = aoclib.get_data(year=2016, day=5).strip()
 
 ONE = ""
 TWO = [""] * 8

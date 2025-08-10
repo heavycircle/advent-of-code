@@ -1,10 +1,12 @@
+#!/usr/bin/env python3
+
 """
 --- Day 20: Infinite Elves and Infinite Houses ---
 """
 
-from aocd import get_data
+import aoclib
 
-stream = get_data(year=2015, day=20).strip()
+stream = aoclib.get_data(year=2015, day=20).strip()
 
 
 def sum_factors(n):

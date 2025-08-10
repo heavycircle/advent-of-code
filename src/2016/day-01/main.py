@@ -1,10 +1,12 @@
+#!/usr/bin/env python3
+
 """
 --- Day 1: No Time for a Taxicab ---
 """
 
-from aocd import get_data
+import aoclib
 
-stream = get_data(year=2016, day=1).split(", ")
+stream = aoclib.get_data(year=2016, day=1).split(", ")
 DIRS = {"N": (0, -1), "E": (1, 0), "S": (0, 1), "W": (-1, 0)}
 
 x, y = 0, 0

@@ -1,10 +1,12 @@
+#!/usr/bin/env python3
+
 """
 --- Day 2: Red-Nosed Reports ---
 """
 
-from aocd import get_data
+import aoclib
 
-data = get_data(day=2, year=2024).splitlines()
+data = aoclib.get_data(day=2, year=2024).splitlines()
 
 
 def safe(i):

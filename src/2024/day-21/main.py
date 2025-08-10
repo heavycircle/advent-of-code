@@ -1,12 +1,14 @@
+#!/usr/bin/env python3
+
 """
 --- Day 21: Keypad Conundrum ---
 """
 
 from functools import cache
 
-from aocd import get_data
+import aoclib
 
-data = get_data(day=21, year=2024)
+data = aoclib.get_data(day=21, year=2024)
 
 
 def path(ss):

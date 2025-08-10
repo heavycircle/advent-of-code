@@ -1,10 +1,12 @@
+#!/usr/bin/env python3
+
 """
 --- Day 12: Hot Springs ---
 """
 
-from aocd import get_data
+import aoclib
 
-stream = get_data(day=12, year=2023).splitlines()
+stream = aoclib.get_data(day=12, year=2023).splitlines()
 data = [x.strip() for x in stream]
 grid = {}
 

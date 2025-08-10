@@ -1,12 +1,14 @@
+#!/usr/bin/env python3
+
 """
 --- Day 21: RPG Simulator 20XX ---
 """
 
 from itertools import combinations
 
-from aocd import get_data
+import aoclib
 
-stream = get_data(year=2015, day=21).splitlines()
+stream = aoclib.get_data(year=2015, day=21).splitlines()
 
 boss = {
     "hp": int(stream[0].split()[-1]),

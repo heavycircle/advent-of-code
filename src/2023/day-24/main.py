@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 """
 --- Day 24: Never Tell Me The Odds ---
 """
@@ -5,10 +7,10 @@
 import re
 from itertools import combinations
 
+import aoclib
 import z3
-from aocd import get_data
 
-stream = get_data(day=24, year=2023).splitlines()
+stream = aoclib.get_data(day=24, year=2023).splitlines()
 data = []
 for ll in stream:
     p, v = ll.split("@")

@@ -1,10 +1,12 @@
+#!/usr/bin/env python3
+
 """
 --- Day 8: Resonant Collinearity ---
 """
 
-from aocd import get_data
+import aoclib
 
-data = get_data(day=8, year=2024)
+data = aoclib.get_data(day=8, year=2024)
 
 # Make the grid
 grid = [list(l.strip()) for l in data.splitlines()]

@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 """
 --- Day 19: Aplenty ---
 """
@@ -6,10 +8,10 @@ import re
 from functools import reduce
 from math import prod
 
+import aoclib
 import portion as P
-from aocd import get_data
 
-stream = get_data(day=19, year=2023).split("\n\n")
+stream = aoclib.get_data(day=19, year=2023).split("\n\n")
 
 
 def parse(line):

@@ -1,12 +1,14 @@
+#!/usr/bin/env python3
+
 """
 --- Day 18: RAM Run ---
 """
 
 from collections import deque
 
-from aocd import get_data
+import aoclib
 
-data = get_data(day=18, year=2024)
+data = aoclib.get_data(day=18, year=2024)
 grid = [tuple(map(int, x.strip().split(","))) for x in data.splitlines()]
 
 DIRS = [(0, 1), (1, 0), (0, -1), (-1, 0)]

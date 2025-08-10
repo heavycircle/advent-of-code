@@ -1,11 +1,13 @@
+#!/usr/bin/env python3
+
 """
 --- Day 14: Parabolic Reflector Dish ---
 """
 
+import aoclib
 import numpy as np
-from aocd import get_data
 
-stream = get_data(day=14, year=2023).splitlines()
+stream = aoclib.get_data(day=14, year=2023).splitlines()
 data = np.array([list(x) for x in stream])
 
 

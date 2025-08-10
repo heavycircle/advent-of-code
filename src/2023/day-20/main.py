@@ -1,12 +1,14 @@
+#!/usr/bin/env python3
+
 """
 --- Day 20: Pulse Propagation ---
 """
 
 from math import prod
 
-from aocd import get_data
+import aoclib
 
-stream = get_data(day=20, year=2023).splitlines()
+stream = aoclib.get_data(day=20, year=2023).splitlines()
 
 
 class Module:

@@ -1,11 +1,13 @@
+#!/usr/bin/env python3
+
 """
 --- Day 10: Hoof It ---
 """
 
+import aoclib
 import networkx as nx
-from aocd import get_data
 
-data = get_data(day=10, year=2024)
+data = aoclib.get_data(day=10, year=2024)
 
 
 grid = {

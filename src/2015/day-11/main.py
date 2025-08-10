@@ -1,12 +1,14 @@
+#!/usr/bin/env python3
+
 """
 --- Day 11: Corporate Policy ---
 """
 
 import re
 
-from aocd import get_data
+import aoclib
 
-stream = get_data(day=11, year=2015).strip()
+stream = aoclib.get_data(day=11, year=2015).strip()
 
 
 def increment(s):

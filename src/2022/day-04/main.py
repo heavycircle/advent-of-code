@@ -1,10 +1,12 @@
+#!/usr/bin/env python3
+
 """
 --- Day 4: Camp Cleanup ---
 """
 
-from aocd import get_data
+import aoclib
 
-stream = get_data(day=3, year=2022)
+stream = aoclib.get_data(day=3, year=2022)
 
 
 def contains(x, y):
@@ -25,7 +27,7 @@ def overlap(x, y):
     )
 
 
-lines = [x.split(",") for x in stream.split("\n")]
+lines = [x.split(",") for x in stream.splitlines()]
 
 one = sum([1 for x in lines if contains(x[0], x[1])])
 print("Part 1:", one)

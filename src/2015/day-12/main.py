@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 """
 --- Day 12: JSAbacusFramework.io ---
 """
@@ -5,9 +7,9 @@
 import json
 import re
 
-from aocd import get_data
+import aoclib
 
-stream = get_data(day=12, year=2015)
+stream = aoclib.get_data(day=12, year=2015)
 
 one = sum(map(int, re.findall(r"-?\d+", stream)))
 print("Part 1:", one)

@@ -1,10 +1,12 @@
+#!/usr/bin/env python3
+
 """
 --- Day 22: Wizard Simulator 20XX ---
 """
 
-from aocd import get_data
+import aoclib
 
-stream = get_data(year=2015, day=22).splitlines()
+stream = aoclib.get_data(year=2015, day=22).splitlines()
 
 
 def sim(aa, n):

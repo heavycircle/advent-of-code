@@ -1,10 +1,12 @@
+#!/usr/bin/env python3
+
 """
 --- Day 1: Historian Hysteria ---
 """
 
-from aocd import get_data
+import aoclib
 
-data = get_data(day=1, year=2024).splitlines()
+data = aoclib.get_data(day=1, year=2024).splitlines()
 
 left = []
 right = []

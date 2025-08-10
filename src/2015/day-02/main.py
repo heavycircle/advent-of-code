@@ -1,10 +1,12 @@
+#!/usr/bin/env python3
+
 """
 --- Day 2: I Was Told There Would Be No Math ---
 """
 
-from aocd import get_data
+import aoclib
 
-stream = get_data(day=2, year=2015).splitlines()
+stream = aoclib.get_data(day=2, year=2015).splitlines()
 data = [[int(y) for y in x.split("x")] for x in stream]
 
 ONE = 0

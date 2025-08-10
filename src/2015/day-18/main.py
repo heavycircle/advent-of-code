@@ -1,10 +1,12 @@
+#!/usr/bin/env python3
+
 """
 --- Day 18: Like a GIF For Your Yard ---
 """
 
-from aocd import get_data
+import aoclib
 
-stream = get_data(day=18, year=2015).splitlines()
+stream = aoclib.get_data(day=18, year=2015).splitlines()
 og = [[c == "#" for c in line] for line in stream]
 
 

@@ -1,12 +1,14 @@
+#!/usr/bin/env python3
+
 """
 --- Day 13: Distress Signal ---
 """
 
 from itertools import zip_longest
 
-from aocd import get_data
+import aoclib
 
-stream = get_data(day=13, year=2022)
+stream = aoclib.get_data(day=13, year=2022)
 
 
 def compare(left, right):
@@ -39,7 +41,8 @@ def compare(left, right):
 def one():
     """Returns the number of pairs where the first is less than the second"""
     n = 0
-    s_pairs = [pair.split("\n") for pair in stream.split("\n\n")]
+    s_pairs = [pair.splitlines() for pair in stream.split("\n\n")]
+
     pairs = list(map(lambda p: [eval(i) for i in p], s_pairs))
     for i, pair in enumerate(pairs, start=1):
         n += i if compare(pair[0], pair[1]) > 0 else 0
@@ -48,7 +51,7 @@ def one():
 
 def two():
     """Finds [2] and [6] and returns their product"""
-    pairs = [eval(l.strip()) for l in stream.split("\n") if l and l != "\n"]
+    pairs = [eval(l.strip()) for l in stream.splitlines() if l and l != "\n"]
     st = 1
     ss = 2
     for p in pairs:

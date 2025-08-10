@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 """
 --- Day 16: Reindeer Maze ---
 """
@@ -5,12 +7,12 @@
 from collections import namedtuple
 from math import sqrt
 
-from aocd import get_data
+import aoclib
 
 Point = namedtuple("Point", ["y", "x"])
 Node = namedtuple("Node", ["p", "d"])
 
-data = get_data(day=16, year=2024)
+data = aoclib.get_data(day=16, year=2024)
 rows = data.splitlines()
 width = len(rows[0])
 grid = list(map(list, rows))

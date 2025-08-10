@@ -1,10 +1,12 @@
+#!/usr/bin/env python3
+
 """
 --- Day 6: Tuning Trouble ---
 """
 
 from collections import Counter
 
-from aocd import get_data
+import aoclib
 
 
 def solve(s, l):
@@ -15,6 +17,6 @@ def solve(s, l):
     return i + l
 
 
-lines = get_data(day=6, year=2022)
+lines = aoclib.get_data(day=6, year=2022)
 print("Part 1:", solve(lines, 4))
 print("Part 2:", solve(lines, 14))

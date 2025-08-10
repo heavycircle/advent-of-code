@@ -1,10 +1,12 @@
+#!/usr/bin/env python3
+
 """
 --- Day 5: Print Queue ---
 """
 
 from collections import defaultdict
 
-from aocd import get_data
+import aoclib
 
 
 def parse(d):
@@ -13,7 +15,7 @@ def parse(d):
 
     # Get rule list
     rl = defaultdict(set)
-    for x in r.split("\n"):
+    for x in r.splitlines():
         if not x:
             continue
         b, a = map(int, x.split("|"))
@@ -21,7 +23,7 @@ def parse(d):
 
     # Get update list
     ul = []
-    for x in s.split("\n"):
+    for x in s.splitlines():
         if not x:
             continue
         ul.append([int(y) for y in x.split(",")])
@@ -68,7 +70,7 @@ def topsort(s, r):
 
 
 # Get and parse data
-data = get_data(day=5, year=2024)
+data = aoclib.get_data(day=5, year=2024)
 rules, updates = parse(data)
 
 ONE, TWO = 0, 0

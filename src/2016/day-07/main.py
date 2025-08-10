@@ -1,12 +1,14 @@
+#!/usr/bin/env python3
+
 """
 --- Day 7: Internet Protocol Version 7 ---
 """
 
 import re
 
-from aocd import get_data
+import aoclib
 
-stream = get_data(year=2016, day=7).splitlines()
+stream = aoclib.get_data(year=2016, day=7).splitlines()
 
 ONE = sum(
     1

@@ -1,12 +1,14 @@
+#!/usr/bin/env python3
+
 """
 --- Day 3: Squares With Three Sides ---
 """
 
 import re
 
-from aocd import get_data
+import aoclib
 
-stream = get_data(year=2016, day=3).splitlines()
+stream = aoclib.get_data(year=2016, day=3).splitlines()
 
 
 def v(t):

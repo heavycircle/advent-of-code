@@ -1,10 +1,12 @@
+#!/usr/bin/env python3
+
 """
 --- Day 5: Supply Stacks ---
 """
 
-from aocd import get_data
+import aoclib
 
-raw_data = get_data(day=5, year=2022).split("\n")
+raw_data = aoclib.get_data(day=5, year=2022).splitlines()
 
 # Strip the lines
 strip_data = []

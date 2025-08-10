@@ -1,10 +1,12 @@
+#!/usr/bin/env python3
+
 """
 --- Day 6: Signals and Noise ---
 """
 
-from aocd import get_data
+import aoclib
 
-stream = get_data(year=2016, day=6).splitlines()
+stream = aoclib.get_data(year=2016, day=6).splitlines()
 
 gg = []
 for i in range(len(stream[0])):

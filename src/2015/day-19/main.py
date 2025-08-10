@@ -1,12 +1,14 @@
+#!/usr/bin/env python3
+
 """
 --- Day 19: Medicine for Rudolph ---
 """
 
 import re
 
-from aocd import get_data
+import aoclib
 
-stream = get_data(year=2015, day=19).split("\n\n")
+stream = aoclib.get_data(year=2015, day=19).split("\n\n")
 
 rr = re.findall(r"(\w+) => (\w+)", stream[0])
 ss = stream[1]

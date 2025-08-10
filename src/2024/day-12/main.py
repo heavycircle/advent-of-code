@@ -1,10 +1,12 @@
+#!/usr/bin/env python3
+
 """
 --- Day 12: Garden Groups ---
 """
 
 from collections import deque
 
-from aocd import get_data
+import aoclib
 
 dirs = [(-1, 0, "L"), (0, -1, "TU"), (1, 0, "R"), (0, 1, "D")]
 
@@ -67,7 +69,7 @@ def sides(region):
     return s
 
 
-data = get_data(day=12, year=2024)
+data = aoclib.get_data(day=12, year=2024)
 grid = [x.strip() for x in data.splitlines()]
 
 vis = set()

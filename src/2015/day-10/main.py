@@ -1,12 +1,14 @@
+#!/usr/bin/env python3
+
 """
 --- Day 10: Elves Look, Elves Say ---
 """
 
 import itertools
 
-from aocd import get_data
+import aoclib
 
-stream = get_data(day=10, year=2015).strip()
+stream = aoclib.get_data(day=10, year=2015).strip()
 
 
 def look_and_say(s, n):

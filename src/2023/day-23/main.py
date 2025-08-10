@@ -1,12 +1,14 @@
+#!/usr/bin/env python3
+
 """
 --- Day 23: A Long Walk ---
 """
 
+import aoclib
 import networkx as nx
-from aocd import get_data
 from networkx.classes.function import path_weight
 
-stream = get_data(day=23, year=2023).split()
+stream = aoclib.get_data(day=23, year=2023).split()
 SPEC = {">": (0, -1), "<": (0, 1), "^": (1, 0), "v": (-1, 0)}
 
 N, M = len(stream), len(stream[0])

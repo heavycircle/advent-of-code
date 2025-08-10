@@ -1,12 +1,14 @@
+#!/usr/bin/env python3
+
 """
 --- Day 17: Chronospatial Computer ---
 """
 
 import re
 
-from aocd import get_data
+import aoclib
 
-data = get_data(day=17, year=2024)
+data = aoclib.get_data(day=17, year=2024)
 a, b, c, *prog = map(int, re.findall(r"\d+", data))
 
 

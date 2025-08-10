@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 """
 --- Day 4: The Ideal Stocking Stuffer ---
 """

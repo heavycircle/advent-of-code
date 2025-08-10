@@ -1,14 +1,16 @@
+#!/usr/bin/env python3
+
 """
 --- Day 16: The Floor Will Be Lava ---
 """
 
 import sys
 
-from aocd import get_data
+import aoclib
 
 sys.setrecursionlimit(1000000)
 
-stream = get_data(day=16, year=2023).splitlines()
+stream = aoclib.get_data(day=16, year=2023).splitlines()
 stream = [list(x) for x in stream]
 
 DIRS = {"S": (0, 1), "N": (0, -1), "W": (-1, 0), "E": (1, 0)}

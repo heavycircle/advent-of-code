@@ -1,11 +1,12 @@
+#!/usr/bin/env python3
+
 """
 --- Day 2: Cube Conundrum ---
 """
 
-from aocd import get_data
+import aoclib
 
-data = get_data(day=2, year=2023).split("\n")
-# Data = open("test.txt").read().split("\n")
+data = aoclib.get_data(day=2, year=2023).splitlines()
 
 red = 12
 green = 13

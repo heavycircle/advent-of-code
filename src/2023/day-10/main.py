@@ -1,10 +1,12 @@
+#!/usr/bin/env python3
+
 """
 --- Day 10: Pipe Maze ---
 """
 
-from aocd import get_data
+import aoclib
 
-stream = get_data(day=10, year=2023).split("\n")
+stream = aoclib.get_data(day=10, year=2023).splitlines()
 
 grid = [[i for i in x] for x in stream]
 grid = {(x, y): c for y, r in enumerate(grid) for x, c in enumerate(r)}

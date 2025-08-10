@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 """
 --- Day 7: Bridge Repair ---
 """
@@ -5,7 +7,7 @@
 from itertools import product
 from operator import add, mul
 
-from aocd import get_data
+import aoclib
 
 
 def concat(a, b):
@@ -13,7 +15,7 @@ def concat(a, b):
     return int(str(a) + str(b))
 
 
-data = get_data(day=7, year=2024).splitlines()
+data = aoclib.get_data(day=7, year=2024).splitlines()
 
 
 def chk(ll, rr, ops):

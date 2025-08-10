@@ -1,10 +1,12 @@
+#!/usr/bin/env python3
+
 """
 --- Day 12: Leonardo's Monorail
 """
 
-from aocd import get_data
+import aoclib
 
-data = get_data(day=12, year=2016).splitlines()
+data = aoclib.get_data(day=12, year=2016).splitlines()
 
 
 def run(regs):

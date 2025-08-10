@@ -1,10 +1,12 @@
+#!/usr/bin/env python3
+
 """
 --- Day 1: Not Quite Lisp ---
 """
 
-from aocd import get_data
+import aoclib
 
-stream = get_data(day=1, year=2015)
+stream = aoclib.get_data(day=1, year=2015)
 
 one = stream.count("(") - stream.count(")")
 i = 0

@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 """
 --- Day 15: Science for Hungry People ---
 """
@@ -5,9 +7,9 @@
 import re
 from itertools import combinations
 
-from aocd import get_data
+import aoclib
 
-stream = get_data(year=2015, day=15).splitlines()
+stream = aoclib.get_data(year=2015, day=15).splitlines()
 
 dd = {}
 for l in stream:

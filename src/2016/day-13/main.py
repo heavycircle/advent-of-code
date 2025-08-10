@@ -1,8 +1,10 @@
+#!/usr/bin/env python3
+
 from collections import deque
 
-from aocd import get_data
+import aoclib
 
-data = get_data(day=13, year=2016)
+data = aoclib.get_data(day=13, year=2016)
 
 dirs = [(-1, 0), (1, 0), (0, -1), (0, 1)]
 q = deque()

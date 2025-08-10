@@ -1,12 +1,14 @@
+#!/usr/bin/env python3
+
 """
 --- Day 17: No Such Thing as Too Much ---
 """
 
 from itertools import combinations
 
-from aocd import get_data
+import aoclib
 
-stream = get_data(day=17, year=2015).splitlines()
+stream = aoclib.get_data(day=17, year=2015).splitlines()
 data = [int(line) for line in stream]
 
 ac = [

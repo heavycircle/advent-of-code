@@ -1,10 +1,12 @@
+#!/usr/bin/env python3
+
 """
 --- Day 8: Matchsticks ---
 """
 
-from aocd import get_data
+import aoclib
 
-stream = get_data(day=8, year=2015).splitlines()
+stream = aoclib.get_data(day=8, year=2015).splitlines()
 
 ONE = 0
 for l in stream:

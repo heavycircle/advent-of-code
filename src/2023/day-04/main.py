@@ -1,14 +1,15 @@
+#!/usr/bin/env python3
+
 """
 --- Day 4: Scratchcards ---
 """
 
 from functools import reduce
 
-from aocd import get_data
+import aoclib
 
-stream = get_data(day=4, year=2023)
-
-data = [x.strip() for x in stream.split("\n")]
+stream = aoclib.get_data(day=4, year=2023)
+data = [x.strip() for x in stream.splitlines()]
 
 ONE = 0
 for x in data:

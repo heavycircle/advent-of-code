@@ -1,10 +1,12 @@
+#!/usr/bin/env python3
+
 """
 --- Day 01: Inverse Captcha ---
 """
 
-from aocd import get_data
+import aoclib
 
-data = get_data(day=1, year=2017)
+data = aoclib.get_data(day=1, year=2017)
 
 ONE = 0
 num = data + data[0]

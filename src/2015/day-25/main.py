@@ -1,10 +1,12 @@
+#!/usr/bin/env python3
+
 """
 --- Day 25: Let It Snow ---
 """
 
-from aocd import get_data
+import aoclib
 
-stream = get_data(year=2015, day=25).split()
+stream = aoclib.get_data(year=2015, day=25).split()
 r, c = int(stream[-3][:-1]), int(stream[-1][:-1])
 
 

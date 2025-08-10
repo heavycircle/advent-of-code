@@ -1,12 +1,14 @@
+#!/usr/bin/env python3
+
 """
 --- Day 9: Mirage Maintenance ---
 """
 
-from aocd import get_data
+import aoclib
 
-print(get_data(day=9, year=2023))
+print(aoclib.get_data(day=9, year=2023))
 
-data = [x.strip().split() for x in get_data(day=9, year=2023).split("\n")]
+data = [x.strip().split() for x in aoclib.get_data(day=9, year=2023).splitlines()]
 data = [[int(x) for x in line] for line in data]
 
 ONE = 0

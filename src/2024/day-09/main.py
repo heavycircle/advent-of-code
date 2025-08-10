@@ -1,11 +1,13 @@
+#!/usr/bin/env python3
+
 """
 --- Day 9: Disk Fragmenter ---
 """
 
-from aocd import get_data
+import aoclib
 
 # Get data
-data = get_data(day=9, year=2024)
+data = aoclib.get_data(day=9, year=2024)
 num = data.strip()
 
 # Get expanded list

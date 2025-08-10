@@ -1,12 +1,14 @@
+#!/usr/bin/env python3
+
 """
 --- Day 14: Reindeer Olympics ---
 """
 
 import re
 
-from aocd import get_data
+import aoclib
 
-stream = get_data(day=14, year=2015).splitlines()
+stream = aoclib.get_data(day=14, year=2015).splitlines()
 TT = 2503
 
 dd = {}

@@ -1,10 +1,12 @@
+#!/usr/bin/env python3
+
 """
 --- Day 3: Perfectly Spherical Houses in a Vacuum ---
 """
 
-from aocd import get_data
+import aoclib
 
-stream = get_data(day=3, year=2015)
+stream = aoclib.get_data(day=3, year=2015)
 
 ss = set()
 p = (0, 0)

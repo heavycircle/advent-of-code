@@ -1,13 +1,15 @@
+#!/usr/bin/env python3
+
 """
 --- Day 25: Snowverload ---
 """
 
 from math import prod
 
+import aoclib
 import networkx as nx
-from aocd import get_data
 
-stream = get_data(day=25, year=2023).splitlines()
+stream = aoclib.get_data(day=25, year=2023).splitlines()
 data = {}
 for ll in stream:
     data[ll.split(":")[0]] = ll.split(":")[1].strip().split()

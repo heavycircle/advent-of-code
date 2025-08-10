@@ -1,10 +1,12 @@
+#!/usr/bin/env python3
+
 """
 --- Day 2: Bathroom Security ---
 """
 
-from aocd import get_data
+import aoclib
 
-stream = get_data(year=2016, day=2).splitlines()
+stream = aoclib.get_data(year=2016, day=2).splitlines()
 
 DIRS = {"U": (0, -1), "R": (1, 0), "D": (0, 1), "L": (-1, 0)}
 PAD = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]

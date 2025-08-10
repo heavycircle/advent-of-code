@@ -1,10 +1,12 @@
+#!/usr/bin/env python3
+
 """
 --- Day 15: Lens Library ---
 """
 
-from aocd import get_data
+import aoclib
 
-stream = get_data(day=15, year=2023).strip().split(",")
+stream = aoclib.get_data(day=15, year=2023).strip().split(",")
 
 
 def hasher(s):

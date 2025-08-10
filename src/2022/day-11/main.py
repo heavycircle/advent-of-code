@@ -1,12 +1,14 @@
+#!/usr/bin/env python3
+
 """
 --- Day 11: Monkey in the Middle ---
 """
 
-from aocd import get_data
+import aoclib
 
-stream = get_data(day=11, year=2022).split("\n\n")
+stream = aoclib.get_data(day=11, year=2022).split("\n\n")
 
-data = [x.strip().split("\n") for x in stream]
+data = [x.strip().splitlines() for x in stream]
 print(data[0])
 
 m = {}

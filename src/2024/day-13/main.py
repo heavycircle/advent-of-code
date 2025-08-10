@@ -1,8 +1,10 @@
+#!/usr/bin/env python3
+
 import re
 
-from aocd import get_data
+import aoclib
 
-data = get_data(day=13, year=2024).split("\n\n")
+data = aoclib.get_data(day=13, year=2024).split("\n\n")
 
 # Regex to get the numbers
 lst = []

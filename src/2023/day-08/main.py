@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 """
 --- Day 8: Haunted Wasteland ---
 """
@@ -5,9 +7,9 @@
 from functools import reduce
 from math import gcd
 
-from aocd import get_data
+import aoclib
 
-stream = get_data(day=8, year=2023)
+stream = aoclib.get_data(day=8, year=2023)
 
 data = [x.strip() for x in stream.splitlines()]
 

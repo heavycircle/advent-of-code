@@ -1,12 +1,14 @@
+#!/usr/bin/env python3
+
 """
 --- Day 19: Linen Layout ---
 """
 
 from functools import cache
 
-from aocd import get_data
+import aoclib
 
-data = get_data(day=19, year=2024).split("\n\n")
+data = aoclib.get_data(day=19, year=2024).split("\n\n")
 
 
 @cache

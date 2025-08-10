@@ -1,8 +1,10 @@
+#!/usr/bin/env python3
+
 """
 --- Day 15: Warehouse Woes ---
 """
 
-from aocd import get_data
+import aoclib
 
 
 def canmove(pos, d, ignore=False):
@@ -36,7 +38,7 @@ def move(pos, d, ignore=False):
     return True
 
 
-data = get_data(day=15, year=2024)
+data = aoclib.get_data(day=15, year=2024)
 
 for x in ["ONE", "TWO"]:
     # Reset grid
