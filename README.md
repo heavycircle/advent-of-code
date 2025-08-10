@@ -123,3 +123,5 @@ These calendars indicate solves in _at least one_ language.
 | :star2: | :star2: | :star2: | :star2: | :star2: | :star2: | :star2: |
 | :star2: | :star2: | :star2: | :star2: | :star2: | :star2: | :star2: |
 | :star2: | :star2: | :star2: | :star2: | :star2: |         |         |
+
+> _Key: :star: = silver (pt. 1), :star2: = gold (pt. 1&2)_
