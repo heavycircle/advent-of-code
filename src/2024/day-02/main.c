@@ -1,3 +1,4 @@
+#include <aoclib.h>
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -6,7 +7,7 @@
 bool safe(int *row, size_t len)
 {
     bool safe = true;
-    bool inc  = true;
+    bool inc = true;
 
     for (size_t i = 0; i < len - 1; ++i)
     {
@@ -34,19 +35,19 @@ bool safe(int *row, size_t len)
 
 int *tokenize(char *line, size_t *len)
 {
-    size_t i   = 0;
-    int   *arr = calloc(++i, sizeof(int));
+    size_t i = 0;
+    int *arr = calloc(++i, sizeof(int));
 
     char *ptr;
     char *token = strtok_r(line, " ", &ptr);
     while (token)
     {
         // Get number
-        long num   = strtol(token, NULL, 10);
+        long num = strtol(token, NULL, 10);
         arr[i - 1] = (int)num;
 
         // Resize and get next
-        arr   = realloc(arr, (++i) * sizeof(int));
+        arr = realloc(arr, (++i) * sizeof(int));
         token = strtok_r(NULL, " ", &ptr);
     }
 
@@ -66,28 +67,21 @@ int *pop(int *row, size_t len, size_t idx)
     return copy;
 }
 
-int main(int argc, char **argv)
+int main(void)
 {
-    // Args
-    if (argc != 2)
-    {
-        fprintf(stderr, "Usage: %s <filename>\n", argv[0]);
-        exit(EXIT_FAILURE);
-    }
-
-    // Get filename
-    FILE *fp = fopen(argv[1], "r");
+    // Get datafile
+    FILE *fp = get_datafile(2024, 2);
     if (!fp)
     {
-        perror("fopen");
+        fprintf(stderr, "get_data: missing input file\n");
         exit(EXIT_FAILURE);
     }
 
     // Run through
-    char  *line = NULL;
+    char *line = NULL;
     size_t len;
-    int    one = 0;
-    int    two = 0;
+    int one = 0;
+    int two = 0;
     while (getline(&line, &len, fp) != -1)
     {
         // Part 1
@@ -106,8 +100,8 @@ int main(int argc, char **argv)
         free(row);
     }
 
-    printf("one: %d\n", one);
-    printf("two: %d\n", two);
+    printf("ONE: %d\n", one);
+    printf("TWO: %d\n", two);
 
     fclose(fp);
     if (line)

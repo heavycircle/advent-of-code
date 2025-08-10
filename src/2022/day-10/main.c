@@ -4,11 +4,11 @@
 int one(FILE *fp)
 {
     size_t len;
-    char  *line = NULL;
+    char *line = NULL;
 
-    size_t cycles  = 1;     // Cycle counter
-    int    keys[6] = { 0 }; // Holds strengths at indices
-    int    X       = 1;     // Register value of X
+    size_t cycles = 1;   // Cycle counter
+    int keys[6] = { 0 }; // Holds strengths at indices
+    int X = 1;           // Register value of X
     while (getline(&line, &len, fp) != -1)
     {
         // Check cycles
@@ -39,11 +39,11 @@ int one(FILE *fp)
 void two(FILE *fp)
 {
     size_t len;
-    char  *line = NULL;
+    char *line = NULL;
 
-    size_t cycles      = 1;     // Cycle counter
-    int    X           = 1;     // Register value of X
-    char   lights[240] = { 0 }; // Array of lights
+    size_t cycles = 1;        // Cycle counter
+    int X = 1;                // Register value of X
+    char lights[240] = { 0 }; // Array of lights
     while (getline(&line, &len, fp) != -1)
     {
         int position = (cycles - 1) % 40;

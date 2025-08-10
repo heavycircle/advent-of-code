@@ -9,7 +9,7 @@ int isInt(const char c)
 
 int one(FILE *fp)
 {
-    char  *line = NULL;
+    char *line = NULL;
     size_t len;
 
     int t = 0;
@@ -40,7 +40,7 @@ typedef struct map
 {
     char *first;
     char *last;
-    int   i;
+    int i;
 } map;
 
 int first(const void *a, const void *b)
@@ -55,10 +55,10 @@ int last(const void *a, const void *b)
 int two(FILE *fp)
 {
     // Starter pack
-    char  *s[9] = { "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
-    char  *line = NULL;
+    char *s[9] = { "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
+    char *line = NULL;
     size_t len;
-    int    t = 0;
+    int t = 0;
 
     while (getline(&line, &len, fp) != -1)
     {
@@ -66,7 +66,7 @@ int two(FILE *fp)
         map *n = malloc(9 * sizeof(map));
         for (int i = 0; i < 9; ++i)
         {
-            n[i]     = (map) { strstr(line, s[i]), strstr(line, s[i]), i + 1 };
+            n[i] = (map) { strstr(line, s[i]), strstr(line, s[i]), i + 1 };
             char *re = n[i].last;
             while (re != NULL)
             {

@@ -4,14 +4,14 @@
 
 int one(FILE *fp)
 {
-    char   *line = NULL;
-    size_t  len  = 0;
+    char *line = NULL;
+    size_t len = 0;
     ssize_t read;
 
     // Initialize array
     uint32_t totals[1000] = { 0 };
-    uint16_t i            = 0;
-    uint32_t sum          = 0;
+    uint16_t i = 0;
+    uint32_t sum = 0;
 
     // Read the file till no more lines
     while ((read = getline(&line, &len, fp)) != -1)
@@ -48,14 +48,14 @@ int compare(const void *a, const void *b)
 
 int two(FILE *fp)
 {
-    char   *line = NULL;
-    size_t  len  = 0;
+    char *line = NULL;
+    size_t len = 0;
     ssize_t read;
 
     // Initialize array
-    int      totals[1000] = { 0 };
-    uint16_t i            = 0;
-    uint32_t sum          = 0;
+    int totals[1000] = { 0 };
+    uint16_t i = 0;
+    uint32_t sum = 0;
 
     // Read the file till no more lines
     while ((read = getline(&line, &len, fp)) != -1)

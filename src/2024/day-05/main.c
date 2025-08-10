@@ -1,5 +1,4 @@
-#include "advent.h"
-
+#include <aoclib.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -13,7 +12,7 @@ void parse(char *data)
     while (line && *line)
     {
         // Get the line length
-        end        = strchr(line, '\n');
+        end = strchr(line, '\n');
         size_t len = end ? (size_t)(end - line) : strlen(line);
         if (len <= 1)
             break;

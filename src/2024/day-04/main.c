@@ -4,7 +4,7 @@
 #include <string.h>
 
 char **grid;
-int    gridlen;
+int gridlen;
 
 bool bounded(int i, int j)
 {
@@ -13,7 +13,7 @@ bool bounded(int i, int j)
 
 int one(void)
 {
-    int  ret     = 0;
+    int ret = 0;
     char match[] = "XMAS";
     for (int i = 0; i < gridlen; ++i)
     {
@@ -109,10 +109,10 @@ int main(void)
     }
 
     // Make grid
-    char  *line    = NULL;
-    size_t len     = 0;
-    bool   first   = true;
-    int    linenum = 0;
+    char *line = NULL;
+    size_t len = 0;
+    bool first = true;
+    int linenum = 0;
     while (getline(&line, &len, fp) != -1)
     {
         // Allocate grid on first pass

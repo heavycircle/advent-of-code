@@ -147,7 +147,8 @@ aoc-c() {
     # Run the makefile
     debug "c: building: ${YEAR@A} ${DATE@A}"
     cd src || return $?
-    bear -- make "$YEAR" "$DATE"
+    bear -- make clean
+    bear -- make DEBUG="$DEBUG" "$YEAR" "$DATE"
 
     # Run the binary
     debug "c: running: ${YEAR@A} ${DATE@A}"

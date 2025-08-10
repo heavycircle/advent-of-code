@@ -1,4 +1,4 @@
-#include "advent.h"
+#include <aoclib.h>
 
 int main(void)
 {

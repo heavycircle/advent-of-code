@@ -1,5 +1,4 @@
-#include "advent.h"
-
+#include <aoclib.h>
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -13,7 +12,7 @@ long solve(long nums[6], long off)
 
     // Get solutions
     long a = roundl((y - ((nums[3] * x) / (double)nums[2]))
-                    / (double)(nums[1] - ((nums[3] * nums[0]) / (double)nums[2])));
+        / (double)(nums[1] - ((nums[3] * nums[0]) / (double)nums[2])));
     long b = roundl((x - nums[0] * a) / (double)nums[2]);
 
     // Check values
@@ -28,8 +27,8 @@ int main(void)
     char *data = get_data(13, 2024);
 
     char *start = data, *end;
-    long  nums[6];
-    int   i;
+    long nums[6];
+    int i;
 
     long one = 0, two = 0;
     while (start && start[0] && start[1])
@@ -37,16 +36,16 @@ int main(void)
         // Button lines
         for (i = 0; i < 4; ++i)
         {
-            start   = strchr(start, '+');
+            start = strchr(start, '+');
             nums[i] = strtol(start + 1, &end, 10);
-            start   = end;
+            start = end;
         }
         // Prize line
         for (i = 4; i < 6; ++i)
         {
-            start   = strchr(start, '=');
+            start = strchr(start, '=');
             nums[i] = strtol(start + 1, &end, 10);
-            start   = end;
+            start = end;
         }
 
         // Solver

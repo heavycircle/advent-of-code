@@ -1,18 +1,18 @@
-#include <advent.h>
+#include <aoclib.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
-int   *times = NULL;
+int *times = NULL;
 size_t items = 0;
-int   *dists = NULL;
+int *dists = NULL;
 
 void parse_data(FILE *fp)
 {
     char **lines = readlines(fp, NULL);
-    char **t     = split(strip(split(lines[0], ":", NULL)[1]), " ", &items);
-    char **d     = split(strip(split(lines[1], ":", NULL)[1]), " ", &items);
-    times        = malloc(items * sizeof(int));
+    char **t = split(strip(split(lines[0], ":", NULL)[1]), " ", &items);
+    char **d = split(strip(split(lines[1], ":", NULL)[1]), " ", &items);
+    times = malloc(items * sizeof(int));
     for (size_t i = 0; i < items; ++i)
         times[i] = atoi(t[i]);
     dists = malloc(items * sizeof(int));
@@ -30,7 +30,7 @@ int one(void)
     for (size_t i = 0; i < items; ++i)
     {
         const int t = times[i], d = dists[i];
-        long      w = 0;
+        long w = 0;
         for (int j = 0; j < t; ++j)
         {
             if (j * (t - j) > d)

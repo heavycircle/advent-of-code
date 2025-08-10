@@ -3,7 +3,7 @@ MAKEFLAGS += -s --no-print-directory
 .SILENT:
 
 CC      := gcc
-CFLAGS  := -Wall -Wextra -pedantic -g -Ilib
+CFLAGS  := -Wall -Wextra -pedantic -g -Ilib -DDEBUG=$(DEBUG)
 LDFLAGS :=
 
 # Parse goals ONLY if not already provided

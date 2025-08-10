@@ -23,8 +23,8 @@ int unique(char *string, size_t length)
 int solve(FILE *fp, int strlen)
 {
     // Prep the input
-    char         *line = NULL;
-    size_t        len;
+    char *line = NULL;
+    size_t len;
     const ssize_t read = getline(&line, &len, fp);
 
     // Parse the file

@@ -1,12 +1,11 @@
-#include "advent.h"
-
+#include <aoclib.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
 typedef struct
 {
-    int  **grid;
+    int **grid;
     size_t rows;
     size_t cols;
 } Grid;
@@ -20,7 +19,7 @@ typedef struct
 typedef struct
 {
     Point **pts;
-    size_t  len;
+    size_t len;
 } Points;
 
 // Global grid
@@ -34,20 +33,20 @@ void fill_grid(char *data)
     while (line && *line)
     {
         // Get line length
-        end        = strchr(line, '\n');
+        end = strchr(line, '\n');
         size_t len = end ? (size_t)(end - line) : strlen(line);
         if (grid.cols == 0)
             grid.cols = (int)len;
 
         // Reallocate
-        grid.grid            = realloc(grid.grid, (grid.rows + 1) * sizeof(int *));
+        grid.grid = realloc(grid.grid, (grid.rows + 1) * sizeof(int *));
         grid.grid[grid.rows] = calloc(grid.cols, sizeof(int));
 
         // Fill row
         for (size_t i = 0; i < grid.cols; ++i)
         {
-            char c                  = line[i];
-            long l                  = strtol(&c, NULL, 10);
+            char c = line[i];
+            long l = strtol(&c, NULL, 10);
             grid.grid[grid.rows][i] = (int)l;
         }
 
@@ -78,11 +77,11 @@ int dfs_unique(size_t i, size_t j, Points *pts)
         {
             // New point
             Point *point = calloc(1, sizeof(Point));
-            point->x     = i;
-            point->y     = j;
+            point->x = i;
+            point->y = j;
 
             // Add to array
-            pts->pts               = realloc(pts->pts, (++pts->len) * sizeof(Point *));
+            pts->pts = realloc(pts->pts, (++pts->len) * sizeof(Point *));
             pts->pts[pts->len - 1] = point;
         }
 

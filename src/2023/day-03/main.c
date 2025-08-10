@@ -31,7 +31,7 @@ int getparts(const int x, const int y)
 int getgears(const int x, const int y)
 {
     int nums = 0;
-    int sum  = 0;
+    int sum = 0;
     for (int j = x - 1; j < x + 2; ++j)
         for (int k = y - 1; k < y + 2; ++k)
             if (isdigit(grid[j][k]))
@@ -52,7 +52,7 @@ int getgears(const int x, const int y)
 long one(FILE *fp)
 {
     char buf[145];
-    int  x = 0;
+    int x = 0;
     while (fgets(buf, 145, fp) != NULL)
     {
         buf[140] = '\0';
@@ -70,7 +70,7 @@ long one(FILE *fp)
 long two(FILE *fp)
 {
     char buf[145];
-    int  x = 0;
+    int x = 0;
     while (fgets(buf, 145, fp) != NULL)
     {
         buf[140] = '\0';

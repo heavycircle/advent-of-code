@@ -5,6 +5,7 @@ __pycache__
 # C build files
 build/
 bin/
+.cache/
 compile_commands.json
 
 # Input files

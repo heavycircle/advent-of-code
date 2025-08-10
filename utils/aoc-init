@@ -83,13 +83,14 @@ gen-c() {
     cat >"$file" <<EOF || true
 #include <aoclib.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 int main(void)
 {
-    // Get the date. Function kills if non-existent.
-    FILE *fp = get_data($YEAR, $DATE);
+    // Get the data. Function kills if non-existent.
+    char *data = get_data($YEAR, $DATE);
 
-    fclose(fp);
+    free(data);
     return 0;
 }
 EOF

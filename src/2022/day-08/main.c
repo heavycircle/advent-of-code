@@ -10,9 +10,9 @@ enum Visible
 int one(FILE *fp)
 {
     // Prep file
-    char   *line = NULL;
+    char *line = NULL;
     ssize_t read;
-    size_t  len;
+    size_t len;
 
     // Get the size of the file
     size_t rows = 0;
@@ -52,7 +52,7 @@ int one(FILE *fp)
     {
         char tallest = grid[i][0];
 
-        vis[i][0]        = VISIBLE;
+        vis[i][0] = VISIBLE;
         vis[i][cols - 1] = VISIBLE;
 
         // Run the rows forward
@@ -80,7 +80,7 @@ int one(FILE *fp)
     {
         char tallest = grid[0][j];
 
-        vis[0][j]        = VISIBLE;
+        vis[0][j] = VISIBLE;
         vis[rows - 1][j] = VISIBLE;
 
         // Run the rows forward
@@ -123,9 +123,9 @@ int one(FILE *fp)
 int two(FILE *fp)
 {
     // Prep file
-    char   *line = NULL;
+    char *line = NULL;
     ssize_t read;
-    size_t  len;
+    size_t len;
 
     // Get the size of the file
     size_t rows = 0;
@@ -157,8 +157,8 @@ int two(FILE *fp)
     {
         for (size_t col = 1; col < cols - 1; ++col)
         {
-            const char height      = grid[row][col];
-            size_t     point_score = 1;
+            const char height = grid[row][col];
+            size_t point_score = 1;
 
             // Check the up direction
             size_t up_score = 1;

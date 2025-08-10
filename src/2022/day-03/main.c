@@ -10,12 +10,12 @@ int compare(const void *a, const void *b)
 int one(FILE *fp)
 {
     // Prep the input
-    char   *line = NULL;
+    char *line = NULL;
     ssize_t read;
-    size_t  len = 0;
+    size_t len = 0;
 
     // Get the input
-    char    *items = malloc(1000 * sizeof(char));
+    char *items = malloc(1000 * sizeof(char));
     uint16_t count = 0;
     while ((read = getline(&line, &len, fp)) != -1)
     {
@@ -69,14 +69,14 @@ int one(FILE *fp)
 int two(FILE *fp)
 {
     // Prep the input
-    char   *first  = NULL;
-    char   *second = NULL;
-    char   *third  = NULL;
+    char *first = NULL;
+    char *second = NULL;
+    char *third = NULL;
     ssize_t f_read;
-    size_t  len = 0;
+    size_t len = 0;
 
     // Get the input
-    char    *items = malloc(1000 * sizeof(char));
+    char *items = malloc(1000 * sizeof(char));
     uint16_t count = 0;
     while ((f_read = getline(&first, &len, fp)) != -1)
     {

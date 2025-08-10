@@ -1,6 +1,6 @@
 // Inspiration: https://github.com/fuzesmarcell/aoc/blob/main/2023/day_02.c
 
-#include <advent.h>
+#include <aoclib.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -14,15 +14,15 @@ typedef struct Max
 
 int one(FILE *fp)
 {
-    int  total = 0, n;
+    int total = 0, n;
     char buf[128];
 
     // Get kv-pairs with colon
     while (fscanf(fp, "%s %d:", buf, &n) == 2)
     {
         const Max m = { 12, 13, 14 };
-        int       i, x = 0;
-        char      v[128];
+        int i, x = 0;
+        char v[128];
 
         // Get kv-pairs
         while (fscanf(fp, "%d %s", &i, v) == 2)
@@ -47,14 +47,14 @@ int one(FILE *fp)
 
 int two(FILE *fp)
 {
-    int  total = 0, n;
+    int total = 0, n;
     char buf[128];
 
     // Get pairs with colon after
     while (fscanf(fp, "%s %d:", buf, &n) == 2)
     {
-        Max  m = { 0, 0, 0 };
-        int  i;
+        Max m = { 0, 0, 0 };
+        int i;
         char v[128];
         // Get key/values
         while (fscanf(fp, "%d %s", &i, v) == 2)

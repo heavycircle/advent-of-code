@@ -1,4 +1,4 @@
-#include <advent.h>
+#include <aoclib.h>
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -21,7 +21,7 @@ long *recurse(long *list, const size_t num)
     long *r = malloc((num + 2) * sizeof(long));
     for (size_t i = 0; i < num; ++i)
         r[i + 1] = list[i];
-    r[0]       = r[1] - back[0];
+    r[0] = r[1] - back[0];
     r[num + 1] = r[num] + back[num];
     return r;
 }
@@ -34,8 +34,8 @@ long *solve(FILE *fp)
     char **lines = readlines(fp, &num_lines);
     for (size_t i = 0; i < num_lines; ++i)
     {
-        long       *nums = longify(split(strip(lines[i]), " ", &items), items);
-        const long *r    = recurse(nums, items);
+        long *nums = longify(split(strip(lines[i]), " ", &items), items);
+        const long *r = recurse(nums, items);
         sol[0] += r[0];
         sol[1] += r[items + 1];
         free(nums);

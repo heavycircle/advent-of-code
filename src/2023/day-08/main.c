@@ -1,4 +1,4 @@
-#include <advent.h>
+#include <aoclib.h>
 #include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -11,9 +11,9 @@ typedef struct
     char r[4];
 } Node;
 
-char  *generator = NULL;
-Node  *tree      = NULL;
-size_t e         = 0;
+char *generator = NULL;
+Node *tree = NULL;
+size_t e = 0;
 
 Node *get(const char *k)
 {
@@ -31,7 +31,7 @@ void build_tree(FILE *fp)
     generator = realloc(generator, strlen(generator) * sizeof(char));
 
     // Get tree items
-    tree  = malloc(1000 * sizeof(Node));
+    tree = malloc(1000 * sizeof(Node));
     int i = 0;
     while (fscanf(fp, " %[^ ] = (%[^,], %[^)])\n", tree[i].k, tree[i].l, tree[i].r) == 3)
         ++i;
@@ -86,7 +86,7 @@ int main(void)
     printf("ONE: %ld\n", parse(f, 1));
 
     // Part 2 - start at all items ending in A
-    size_t i   = 0;
+    size_t i = 0;
     char **two = malloc(e * sizeof(char *));
     for (size_t j = 0; j < e; ++j)
     {

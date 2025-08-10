@@ -1,5 +1,4 @@
-#include "advent.h"
-
+#include <aoclib.h>
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -7,7 +6,7 @@
 
 typedef struct
 {
-    int   *ptr;
+    int *ptr;
     size_t len;
 } List;
 
@@ -18,7 +17,7 @@ int cmp_int(const void *a, const void *b)
 
 int main(void)
 {
-    char *data = get_data(1, 2024);
+    char *data = get_data(2024, 1);
     if (!data)
     {
         fprintf(stderr, "Could not get data from AOC\n");
@@ -27,7 +26,7 @@ int main(void)
 
     // Count number of newlines
     char *s = data;
-    int   i = 0;
+    int i = 0;
     for (; s[i]; s[i] == '\n' ? ++i : *s++)
         ;
 
@@ -35,37 +34,23 @@ int main(void)
     List x = { .ptr = calloc(i, sizeof(int)), .len = i };
     List y = { .ptr = calloc(i, sizeof(int)), .len = i };
 
-    // Realloc necessities
-    char *save, *split;
-
-    // First item
-    split    = strtok_r(data, " ", &save);
-    x.ptr[0] = (int)strtol(split, NULL, 10);
-
-    // Action the rest
-    bool left = false;
-    i         = 0;
-    while ((size_t)i < x.len)
+    // Fill the lists
+    i = 0;
+    s = data;
+    while (*s)
     {
-        if (left)
+        int l, r, n = 0;
+        if (sscanf(s, "%d %d%n", &l, &r, &n) == 2)
         {
-            split = strtok_r(NULL, " ", &save);
-            if (!split)
-                break;
-            long l     = strtol(split, NULL, 10);
-            x.ptr[i++] = (int)l;
+            x.ptr[i] = l;
+            y.ptr[i] = r;
+            ++i;
+            s += n;
         }
         else
         {
-            split = strtok_r(NULL, "\n", &save);
-            if (!split)
-                break;
-            long l     = strtol(split, NULL, 10);
-            y.ptr[i++] = (int)l;
+            break;
         }
-
-        // Invert flag parity
-        left = !left;
     }
 
     // Sort
@@ -76,7 +61,7 @@ int main(void)
     int one = 0, two = 0;
     for (size_t i = 0; i < x.len; ++i)
     {
-        one += (y.ptr[i] - x.ptr[i]);
+        one += abs(y.ptr[i] - x.ptr[i]);
         for (size_t j = 0; j < y.len; ++j)
         {
             if (x.ptr[i] == y.ptr[j])
