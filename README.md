@@ -15,6 +15,8 @@ My goal is to solve each challenge using multiple languages to provide the most 
 | C            | 28         |
 | Python       | 97         |
 
+> _This table is automatically updated using the [aoc-readme](./utils/aoc-readme) script. It only uses the number of existing files to guess-timate this value, so it may be off if unfinished challenges were pushed accidentally._
+
 # Challenge Calendars
 
 These calendars indicate solves in _at least one_ language.
