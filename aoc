@@ -6,7 +6,7 @@ set -eu
 #   VERSION INFORMATION                       #
 ###############################################
 
-AOC_VERSION="v0.1.0"
+AOC_VERSION="v2.0.0"
 
 usage() {
     echo "Usage: $(basename $0) COMMAND YEAR DATE"

@@ -71,7 +71,7 @@ main() {
     debug "Fetching: ${year@A} ${date@A}"
 
     # Get AOC_TOKEN from environment
-    source utils/aoc-session
+    source utils/aoc-session || true
     [[ -n "$AOC_SESSION" ]] || fatal "missing AOC_SESSION env"
 
     # Output location
