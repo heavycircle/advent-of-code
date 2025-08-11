@@ -1,17 +1,15 @@
-# Configuration Directories
-.DS_Store
-.idea
-.vscode
+# Python build files
+.venv
+__pycache__
 
-# Python ignores
-Python/**/.venv
-
-# C ignores
-**/.cache
-**/cmake-build-debug
-**/.cmake-backup
-**/bin
+# C build files
+build/
+bin/
+.cache/
+compile_commands.json
 
 # Input files
-**/*.txt
-!**/CMakeLists.txt
+input/
+
+# AOC_SESSION env
+utils/aoc-session

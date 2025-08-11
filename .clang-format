@@ -1,0 +1,10 @@
+﻿BasedOnStyle: WebKit
+AccessModifierOffset: 4
+AlignConsecutiveMacros: true
+AlignTrailingComments: true
+AllowShortFunctionsOnASingleLine: None
+BreakBeforeBraces: Allman
+ColumnLimit: 100
+IncludeBlocks: Regroup
+PointerAlignment: Right
+SortIncludes: true
