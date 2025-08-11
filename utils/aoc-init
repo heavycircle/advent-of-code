@@ -68,8 +68,12 @@ gen-bash() {
     cat >"$file" <<EOF || true
 #!/usr/bin/env bash
 
-data=\$(get-data $YEAR $DATE)
-echo "\$data"
+main() {
+    declare -g DATA=\$(get-data $YEAR $DATE)
+    echo "\$DATA"
+}
+
+main "\$@"
 EOF
 
     # Mark executable (script)
