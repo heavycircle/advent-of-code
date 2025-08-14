@@ -1,12 +1,10 @@
 #!/usr/bin/env bash
 
-set -u
-
 ###############################################
 #   VERSION INFORMATION                       #
 ###############################################
 
-AOC_VERSION="v2.0.0"
+AOC_VERSION="v2.1.0"
 
 usage() {
     echo "Usage: $(basename $0) COMMAND YEAR DATE"
@@ -69,6 +67,23 @@ debug() {
 #   UTILITIES                                 #
 ###############################################
 
+validate() {
+    local year="$1"
+    local day="$2"
+
+    # Get current
+    read cur_year cur_month cur_day <<<"$(date '+%Y %-m %-d')"
+
+    # Validate year
+    ((year > 2015)) || fatal "before AoC: $year"
+    ((cur_month != 12 && year == cur_year)) && fatal "AoC hasn't started: $year"
+    ((year <= cur_year)) || fatal "in the future: $year"
+
+    # Validate day
+    ((day > 0 && day < 26)) || fatal "invalid day: $day"
+    ((year == cur_year && day <= cur_day)) || fatal "AoC day not live: $day"
+}
+
 # Get the root of the repository using a series of ordered metrics.
 get-root() {
     local -a precedence=(.git .gitignore README.md)
@@ -107,6 +122,7 @@ aoc-lang() {
     # Globals
     declare -g YEAR="$2"
     declare -g DATE=$(printf "%02d" "$3")
+    validate "$YEAR" "$DATE"
 
     # Run the language-specific compiler
     local lang="$1"
