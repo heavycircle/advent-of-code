@@ -11,7 +11,7 @@ part-one() {
     rp=${data//\)/}
     rc=$((${#data} - ${#rp}))
 
-    echo "ONE: $(($lc - $rc))"
+    echo "ONE: $((lc - rc))"
 }
 
 part-two() {

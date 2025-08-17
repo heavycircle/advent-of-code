@@ -12,16 +12,16 @@ part-one() {
 
     while IFS='x' read -r l w h; do
         # Get the faces
-        local x=$(($l * $w))
-        local y=$(($l * $h))
-        local z=$(($w * $h))
+        local x=$((l * w))
+        local y=$((l * h))
+        local z=$((w * h))
 
         # Get slack
         local m=$(min3 $x $y $z)
 
         # Get area
-        local area=$((2 * ($x + $y + $z) + $m))
-        ((sum += $area))
+        local area=$((2 * (x + y + z) + m))
+        ((sum += area))
     done <<<"$DATA"
 
     echo "$sum"
@@ -35,12 +35,12 @@ part-two() {
         read -r -a sorted <<<"$(printf '%s\n' "$l" "$w" "$h" | sort -n | tr '\n' ' ')"
 
         # Get the pieces
-        local base=$((2 * (${sorted[0]} + ${sorted[1]})))
-        local ribbon=$((${sorted[0]} * ${sorted[1]} * ${sorted[2]}))
+        local base=$((2 * (sorted[0] + sorted[1])))
+        local ribbon=$((sorted[0] * sorted[1] * sorted[2]))
 
         # Get area
-        local area=$(($base + $ribbon))
-        ((sum += $area))
+        local area=$((base + ribbon))
+        ((sum += area))
 
     done <<<"$DATA"
 

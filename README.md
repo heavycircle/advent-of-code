@@ -38,9 +38,9 @@ current languages I have solves with:
 
 | **Language** | **Solves** |
 | ------------ | ---------- |
-| ASM          | 5          |
-| Bash         | 2          |
-| C            | 28         |
+| ASM          | 4          |
+| Bash         | 7          |
+| C            | 27         |
 | Python       | 97         |
 
 > _This table is automatically updated using the [aoc-readme](./utils/aoc-readme) script. It
@@ -49,7 +49,7 @@ current languages I have solves with:
 
 Here's a little more about the languages I use:
 
-- **ASM**: x86_64 NASM compiled with Makefile. `glibc` is not used at all -- syscalls only!
+- **ASM**: x86_64 NASM compiled with Makefile. `glibc` is not used at all - syscalls only!
 - **Bash**: Bash v5.2. Not necessarily POSIX compliant. To the greatest extent possible, only using shell built-ins. A future task will be ridding the `aoc` scripts as well.
 - **C**: C99 compiled with Makefile. To the greatest extent possible, not requiring other linked libraries.
 - **Python**: My speed language I use on challenge day. The only non-default libraries I use (so far) are `numpy` and `networkx`.
