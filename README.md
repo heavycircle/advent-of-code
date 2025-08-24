@@ -58,7 +58,11 @@ Here's a little more about the languages I use:
 
 These calendars indicate solves in _at least one_ language.
 
-### 2024 Challenges ( 50/50 )
+<table>
+<tr>
+<td valign="top">
+
+### 2024 Challenges (50/50)
 
 | M       | T       | W       | R       | F       | S       | U       |
 | ------- | ------- | ------- | ------- | ------- | ------- | ------- |
@@ -68,7 +72,10 @@ These calendars indicate solves in _at least one_ language.
 | :star2: | :star2: | :star2: | :star2: | :star2: | :star2: | :star2: |
 | :star2: | :star2: |         |         |         |         |         |
 
-### 2023 Challenges ( 50/50 )
+</td>
+<td valign="top">
+
+### 2023 Challenges (50/50)
 
 | M       | T       | W       | R       | F       | S       | U       |
 | ------- | ------- | ------- | ------- | ------- | ------- | ------- |
@@ -77,6 +84,14 @@ These calendars indicate solves in _at least one_ language.
 | :star2: | :star2: | :star2: | :star2: | :star2: | :star2: | :star2: |
 | :star2: | :star2: | :star2: | :star2: | :star2: | :star2: | :star2: |
 | :star2: |         |         |         |         |         |         |
+
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<td valign="top">
 
 ### 2022 Challenges ( 26/50 )
 
@@ -88,11 +103,57 @@ These calendars indicate solves in _at least one_ language.
 |         |         |         |         |         |         |         |
 |         |         |         |         |         |         |         |
 
+</td>
+<td valign="top">
+
 ### 2021 Challenges ( 0/50 )
+
+| M   | T   | W       | R   | F   | S   | U   |
+| --- | --- | ------- | --- | --- | --- | --- |
+|     |     | :star2: |     |     |     |     |
+|     |     |         |     |     |     |     |
+|     |     |         |     |     |     |     |
+|     |     |         |     |     |     |     |
+|     |     |         |     |     |     |     |
+
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<td valign="top">
 
 ### 2020 Challenges ( 0/50 )
 
+| M   | T       | W   | R   | F   | S   | U   |
+| --- | ------- | --- | --- | --- | --- | --- |
+|     | :star2: |     |     |     |     |     |
+|     |         |     |     |     |     |     |
+|     |         |     |     |     |     |     |
+|     |         |     |     |     |     |     |
+|     |         |     |     |     |     |     |
+
+</td>
+<td valign="top">
+
 ### 2019 Challenges ( 0/50 )
+
+| M   | T   | W   | R   | F   | S   | U       |
+| --- | --- | --- | --- | --- | --- | ------- |
+|     |     |     |     |     |     | :star2: |
+|     |     |     |     |     |     |         |
+|     |     |     |     |     |     |         |
+|     |     |     |     |     |     |         |
+|     |     |     |     |     |     |         |
+
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<td valign="top">
 
 ### 2018 Challenges ( 8/50 )
 
@@ -104,6 +165,9 @@ These calendars indicate solves in _at least one_ language.
 |         |         |     |     |     |         |         |
 |         |         |     |     |     |         |         |
 
+</td>
+<td valign="top">
+
 ### 2017 Challenges ( 2/50 )
 
 | M   | T   | W   | R   | F       | S   | U   |
@@ -114,6 +178,14 @@ These calendars indicate solves in _at least one_ language.
 |     |     |     |     |         |     |     |
 |     |     |     |     |         |     |     |
 
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<td valign="top">
+
 ### 2016 Challenges ( 16/50 )
 
 | M       | T       | W       | R       | F       | S       | U       |
@@ -123,6 +195,9 @@ These calendars indicate solves in _at least one_ language.
 | :star2: |         |         |         |         |         |         |
 |         |         |         |         |         |         |         |
 
+</td>
+<td valign="top">
+
 ### 2015 Challenges ( 50/50 )
 
 | M       | T       | W       | R       | F       | S       | U       |
@@ -131,5 +206,9 @@ These calendars indicate solves in _at least one_ language.
 | :star2: | :star2: | :star2: | :star2: | :star2: | :star2: | :star2: |
 | :star2: | :star2: | :star2: | :star2: | :star2: | :star2: | :star2: |
 | :star2: | :star2: | :star2: | :star2: | :star2: |         |         |
+
+</td>
+</tr>
+</table>
 
 > _Key: :star: = silver (pt. 1), :star2: = gold (pt. 1&2)_
