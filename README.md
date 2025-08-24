@@ -87,9 +87,7 @@ These calendars indicate solves in _at least one_ language.
 
 </td>
 </tr>
-</table>
 
-<table>
 <tr>
 <td valign="top">
 
@@ -118,9 +116,7 @@ These calendars indicate solves in _at least one_ language.
 
 </td>
 </tr>
-</table>
 
-<table>
 <tr>
 <td valign="top">
 
@@ -149,9 +145,7 @@ These calendars indicate solves in _at least one_ language.
 
 </td>
 </tr>
-</table>
 
-<table>
 <tr>
 <td valign="top">
 
@@ -180,9 +174,7 @@ These calendars indicate solves in _at least one_ language.
 
 </td>
 </tr>
-</table>
 
-<table>
 <tr>
 <td valign="top">
 
