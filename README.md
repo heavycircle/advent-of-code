@@ -41,7 +41,7 @@ current languages I have solves with:
 | ASM          | 4          |
 | Bash         | 7          |
 | C            | 27         |
-| Python       | 100        |
+| Python       | 103        |
 
 > _This table is automatically updated using the [aoc-readme](./utils/aoc-readme) script. It
 > only uses the number of existing files to guess-timate this value, so it may be off if unfinished
@@ -104,7 +104,7 @@ These calendars indicate solves in _at least one_ language.
 </td>
 <td valign="top">
 
-### 2021 Challenges ( 0/50 )
+### 2021 Challenges ( 2/50 )
 
 | M   | T   | W       | R   | F   | S   | U   |
 | --- | --- | ------- | --- | --- | --- | --- |
@@ -120,7 +120,7 @@ These calendars indicate solves in _at least one_ language.
 <tr>
 <td valign="top">
 
-### 2020 Challenges ( 0/50 )
+### 2020 Challenges ( 2/50 )
 
 | M   | T       | W   | R   | F   | S   | U   |
 | --- | ------- | --- | --- | --- | --- | --- |
@@ -133,7 +133,7 @@ These calendars indicate solves in _at least one_ language.
 </td>
 <td valign="top">
 
-### 2019 Challenges ( 0/50 )
+### 2019 Challenges ( 2/50 )
 
 | M   | T   | W   | R   | F   | S   | U       |
 | --- | --- | --- | --- | --- | --- | ------- |
