@@ -41,7 +41,7 @@ current languages I have solves with:
 | ASM          | 4          |
 | Bash         | 7          |
 | C            | 27         |
-| Python       | 97         |
+| Python       | 98         |
 
 > _This table is automatically updated using the [aoc-readme](./utils/aoc-readme) script. It
 > only uses the number of existing files to guess-timate this value, so it may be off if unfinished
