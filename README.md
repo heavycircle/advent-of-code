@@ -40,8 +40,8 @@ current languages I have solves with:
 | ------------ | ---------- |
 | ASM          | 4          |
 | Bash         | 7          |
-| C            | 27         |
-| Python       | 103        |
+| C            | 28         |
+| Python       | 105        |
 
 > _This table is automatically updated using the [aoc-readme](./utils/aoc-readme) script. It
 > only uses the number of existing files to guess-timate this value, so it may be off if unfinished
@@ -104,15 +104,15 @@ These calendars indicate solves in _at least one_ language.
 </td>
 <td valign="top">
 
-### 2021 Challenges ( 2/50 )
+### 2021 Challenges ( 6/50 )
 
-| M   | T   | W       | R   | F   | S   | U   |
-| --- | --- | ------- | --- | --- | --- | --- |
-|     |     | :star2: |     |     |     |     |
-|     |     |         |     |     |     |     |
-|     |     |         |     |     |     |     |
-|     |     |         |     |     |     |     |
-|     |     |         |     |     |     |     |
+| M   | T   | W       | R       | F       | S   | U   |
+| --- | --- | ------- | ------- | ------- | --- | --- |
+|     |     | :star2: | :star2: | :star2: |     |     |
+|     |     |         |         |         |     |     |
+|     |     |         |         |         |     |     |
+|     |     |         |         |         |     |     |
+|     |     |         |         |         |     |     |
 
 </td>
 </tr>

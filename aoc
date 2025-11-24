@@ -75,7 +75,7 @@ validate() {
     read -r cur_year cur_month cur_day <<<"$(date '+%Y %-m %-d')"
 
     # Validate year
-    ((year > 2015)) || fatal "before AoC: $year"
+    ((year >= 2015)) || fatal "before AoC: $year"
     ((cur_month != 12 && year == cur_year)) && fatal "AoC hasn't started: $year"
     ((year <= cur_year)) || fatal "in the future: $year"
 
