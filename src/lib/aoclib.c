@@ -202,6 +202,7 @@ FILE *get_datafile(size_t year, size_t day)
         if (strcmp(root, "/") == 0)
         {
             fprintf(stderr, "get_data: could not find project root\n");
+            free(root);
             exit(-1);
         }
 
@@ -219,6 +220,7 @@ FILE *get_datafile(size_t year, size_t day)
         if (stat(sentinel, &st) == 0 && S_ISDIR(st.st_mode))
         {
             LOG("info", "get_data: found sentinel: .git");
+            free(sentinel);
             break;
         }
 
@@ -231,6 +233,7 @@ FILE *get_datafile(size_t year, size_t day)
     char path[PATH_MAX] = { 0 };
     snprintf(path, PATH_MAX - 1, "%s/input/%zu/day-%02zu.txt", root, year, day);
     LOG("info", "get_data: found input: %s", path);
+    free(root);
 
     // Get this file
     FILE *fp = fopen(path, "r");
