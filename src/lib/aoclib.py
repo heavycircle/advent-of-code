@@ -25,4 +25,4 @@ def get_data(year: int, day: int) -> str:
         print(f"get_data: missing input file: year={year} day={day}")
         exit(1)
 
-    return infile.read_text().strip()
+    return infile.read_text()
