@@ -1,14 +1,15 @@
 #!/usr/bin/env python3
 
-import aoclib
+import sys
+
 import numpy as np
 
-data = aoclib.get_data(year=2025, day=1)
+data = iter(sys.stdin.readline, "")
 
 lock = np.array([50, 49])
 one = 0
 two = 0
-for ln in data.splitlines():
+for ln in data:
     dir, count = ln[0], int(ln[1:])
 
     if dir == "L":

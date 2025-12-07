@@ -1,10 +1,14 @@
 #!/usr/bin/env python3
 
 import itertools as it
+import sys
 
-import aoclib
-
-data = aoclib.get_data(year=2025, day=4)
+coords = set(
+    (r, c)
+    for r, ln in enumerate(iter(sys.stdin.readline, ""))
+    for c, ch in enumerate(ln.strip())
+    if ch == "@"
+)
 
 
 def valid(lst):
@@ -15,14 +19,6 @@ def valid(lst):
         if sum((x + dx, y + dy) in lst for dx, dy in it.product((-1, 0, 1), repeat=2))
         <= 4
     )
-
-
-coords = set(
-    (r, c)
-    for r, ln in enumerate(data.splitlines())
-    for c, ch in enumerate(ln.strip())
-    if ch == "@"
-)
 
 
 # Part One

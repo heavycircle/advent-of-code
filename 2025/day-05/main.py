@@ -1,11 +1,9 @@
 #!/usr/bin/env python3
 
-import aoclib
+import sys
 
-data = aoclib.get_data(year=2025, day=5).split("\n\n")
-
-ranges = sorted(tuple(map(int, ln.split("-"))) for ln in data[0].splitlines())
-ids = list(map(int, data[1].splitlines()))
+ranges = sorted(tuple(map(int, ln.split("-"))) for ln in iter(sys.stdin.readline, "\n"))
+ids = list(map(int, iter(sys.stdin.readline, "")))
 
 # Part One
 one = sum(any(lo <= i <= hi for lo, hi in ranges) for i in ids)

@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 
-import aoclib
+import sys
 
-data = aoclib.get_data(year=2025, day=7)
+data = [ln.strip() for ln in iter(sys.stdin.readline, "")]
 
-beams = [0] * data.index("\n")
-beams[data.index("S")] = 1
+beams = [0] * len(data[0])
+beams[data[0].index("S")] = 1
 
 one = 0
-for ln in data.splitlines()[1:]:
+for ln in data[1:]:
     for i, c in enumerate(ln):
         if c == "^" and beams[i]:
             one += 1

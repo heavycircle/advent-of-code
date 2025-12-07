@@ -1,13 +1,9 @@
 #!/usr/bin/env python3
 
 import math
+import sys
 
-import aoclib
-
-data = aoclib.get_data(year=2025, day=6)
-
-problems = [list(ln) for ln in data.splitlines(keepends=True)]
-print(problems)
+problems = [list(ln) for ln in iter(sys.stdin.readline, "")]
 cols = zip(*problems)
 
 one, two = 0, 0

@@ -1,21 +1,19 @@
 #!/usr/bin/env python3
 
-from re import match
+import re
+import sys
 
-import aoclib
-
-data = aoclib.get_data(year=2025, day=2)
-
+data = [
+    tuple(map(int, ln.split("-"))) for ln in sys.stdin.readline().strip().split(",")
+]
 
 one, two = 0, 0
-for s in data.split(","):
-    a, b = list(map(int, s.split("-")))
-
+for a, b in data:
     for i in range(a, b + 1):
         s = str(i)
-        if match(r"^(\d+)\1$", s):
+        if re.match(r"^(\d+)\1$", s):
             one += i
-        if match(r"^(\d+)\1+$", s):
+        if re.match(r"^(\d+)\1+$", s):
             two += i
 
 

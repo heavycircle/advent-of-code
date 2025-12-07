@@ -1,6 +1,7 @@
 import datetime as dt
-from ..logger import get_logger
 import os
+
+from ..logger import get_logger
 
 logger = get_logger()
 
