@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 
-import aoclib
 from collections import Counter
+
+import aoclib
 
 data = aoclib.get_data(year=2021, day=3).splitlines()
 data = [z.strip() for z in data]

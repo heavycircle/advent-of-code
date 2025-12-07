@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-
-# AOC Session variable derived from an existing internet login.
-#
-# You can get this by visiting adventofcode.com and doing:
-# Right Click -> Inspect Element -> Applications -> Cookies -> session
-# Copying its value and placing it here.
-
-export AOC_SESSION=""

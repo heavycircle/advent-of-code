@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 
-import aoclib
 from itertools import combinations
+
+import aoclib
 
 data = aoclib.get_data(year=2025, day=3)
 

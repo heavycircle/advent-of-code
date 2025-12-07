@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 
-import aoclib
 from re import match
+
+import aoclib
 
 data = aoclib.get_data(year=2025, day=2)
 

@@ -2,8 +2,10 @@
 
 import aoclib
 
+
 def one():
     return sum(eval(s) for s in data.splitlines())
+
 
 def two():
     s = 0
@@ -14,6 +16,7 @@ def two():
             if s in lst:
                 return s
             lst.append(s)
+
 
 data = aoclib.get_data(year=2018, day=1)
 

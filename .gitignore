@@ -1,15 +1,25 @@
-# Python build files
-.venv
-__pycache__
+# Virtual Environment
+/.venv
 
-# C build files
+# Python build artifacts
+__pycache__
+*.py{c,o}
+
+# Installation
+.*_cache/
+dist/
 build/
-bin/
-.cache/
-compile_commands.json
+*.egg-info/
 
 # Input files
-input/
+/.cache
+*.txt
 
-# AOC_SESSION env
-utils/aoc-session
+# OS Files
+.DS_Store
+Thumbs.db
+
+# IDE Files
+.idea/
+.vscode/
+*.swp

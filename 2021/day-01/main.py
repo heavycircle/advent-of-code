@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
 
-from aoclib import get_data
+import sys
 
-data = get_data(year=2021, day=1).splitlines()
-lst = list(map(int, data))
+lst = list(map(int, iter(sys.stdin.readline, "")))
 
 one = sum(1 for a, b in zip(lst, lst[1:]) if b > a)
 print("ONE:", one)
