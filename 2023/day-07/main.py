@@ -36,9 +36,7 @@ def two(h):
     return max(l)[0], *h2
 
 
-first = sorted(
-    (one(h.replace("J", "X")), int(b)) for h, b in (l.split() for l in lines)
-)
+first = sorted((one(h.replace("J", "X")), int(b)) for h, b in (l.split() for l in lines))
 f = sum(i * b + b for i, (_, b) in enumerate(first))
 print("ONE:", f)
 

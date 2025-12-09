@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 
-import aoclib
 
 # Stream = aoclib.get_data(day=14, year=2022).splitlines()
 stream = open("test.txt").read().splitlines()

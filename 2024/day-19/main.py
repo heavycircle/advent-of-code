@@ -16,11 +16,7 @@ def possible(design, towels):
     """If design is possible"""
     if not design:
         return 1
-    return sum(
-        possible(design[len(towel) :], towels)
-        for towel in towels
-        if design.startswith(towel)
-    )
+    return sum(possible(design[len(towel) :], towels) for towel in towels if design.startswith(towel))
 
 
 t = tuple([x.strip() for x in data[0].split(",")])

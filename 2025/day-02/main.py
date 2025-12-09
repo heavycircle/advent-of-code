@@ -3,9 +3,7 @@
 import re
 import sys
 
-data = [
-    tuple(map(int, ln.split("-"))) for ln in sys.stdin.readline().strip().split(",")
-]
+data = [tuple(map(int, ln.split("-"))) for ln in sys.stdin.readline().strip().split(",")]
 
 one, two = 0, 0
 for a, b in data:

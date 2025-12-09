@@ -31,11 +31,7 @@ def bfs(_grid):
         if (x, y) == (SIZE, SIZE):
             return l
         for d in DIRS:
-            if (
-                0 <= x + d[0] <= SIZE
-                and 0 <= y + d[1] <= SIZE
-                and _grid[x + d[0]][y + d[1]] == "."
-            ):
+            if 0 <= x + d[0] <= SIZE and 0 <= y + d[1] <= SIZE and _grid[x + d[0]][y + d[1]] == ".":
                 q.append((x + d[0], y + d[1], l + 1))
 
     return None

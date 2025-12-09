@@ -29,17 +29,15 @@ def run(regs):
             regs[cmd[1]] -= 1
             inst += 1
 
-        else:
-            if cmd[1] in regs.keys():
-                if regs[cmd[1]] != 0:
-                    inst += int(cmd[2])
-                else:
-                    inst += 1
+        elif cmd[1] in regs.keys():
+            if regs[cmd[1]] != 0:
+                inst += int(cmd[2])
             else:
-                if int(cmd[1]) != 0:
-                    inst += int(cmd[2])
-                else:
-                    inst += 1
+                inst += 1
+        elif int(cmd[1]) != 0:
+            inst += int(cmd[2])
+        else:
+            inst += 1
     return regs["a"]
 
 

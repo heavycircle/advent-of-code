@@ -34,8 +34,7 @@ for i in range(N):
                 # Check bounds, then validate string via extension
                 if (
                     bounded(i + 3 * di, j + 3 * dj)
-                    and "".join(search[i + k * di][j + k * dj] for k in range(4))
-                    == "XMAS"
+                    and "".join(search[i + k * di][j + k * dj] for k in range(4)) == "XMAS"
                 ):
                     ONE += 1
 print("ONE:", ONE)

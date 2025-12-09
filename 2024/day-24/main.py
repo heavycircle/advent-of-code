@@ -35,11 +35,7 @@ def one():
         return OPS[op](W[a], W[b])
 
     return int(
-        "".join(
-            str(evaluate(G[z]))
-            for z in sorted(G.keys(), reverse=True)
-            if z.startswith("z")
-        ),
+        "".join(str(evaluate(G[z])) for z in sorted(G.keys(), reverse=True) if z.startswith("z")),
         2,
     )
 
@@ -52,23 +48,13 @@ def two():
             for c, (a, op, b) in G.items()
             if (
                 (c.startswith("z") and op != "XOR" and c != "z45")
-                or (
-                    op == "XOR"
-                    and all(not x.startswith(("x", "y", "z")) for x in (a, b, c))
-                )
+                or (op == "XOR" and all(not x.startswith(("x", "y", "z")) for x in (a, b, c)))
                 or (
                     op == "AND"
                     and "x00" not in (a, b)
-                    and any(
-                        c in (aa, bb) and op2 != "OR" for (aa, op2, bb) in G.values()
-                    )
+                    and any(c in (aa, bb) and op2 != "OR" for (aa, op2, bb) in G.values())
                 )
-                or (
-                    op == "XOR"
-                    and any(
-                        c in (aa, bb) and op2 == "OR" for (aa, op2, bb) in G.values()
-                    )
-                )
+                or (op == "XOR" and any(c in (aa, bb) and op2 == "OR" for (aa, op2, bb) in G.values()))
             )
         )
     )

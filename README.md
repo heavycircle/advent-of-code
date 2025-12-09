@@ -2,39 +2,27 @@
 
 [![wakatime](https://wakatime.com/badge/user/018c2398-15b4-48fa-922a-a730fce8bcbd/project/018c23e8-2162-4616-8a7e-281d01d40ea2.svg)](https://wakatime.com/badge/user/018c2398-15b4-48fa-922a-a730fce8bcbd/project/018c23e8-2162-4616-8a7e-281d01d40ea2)
 
-My solutions for the Advent of Code challenges. The Wakatime badge shows my entire time spent on
-this repository. I only started using Wakatime recently, so the time spent on the 2015 (and many
-of the 2022) challenges is not included.
+This repository reflects the effort I've put into solving advent of code challenges. Here you'll find solutions completed in several languages and varying levels of expertise based on when I solved that challenge.
 
-# Using this Repository
+## AOC CLI
 
-If you want to download and run this code, you can! You can also use the [aoc](./aoc) program to
-run your own AoC repo.
+This repository comes equipped with a CLI allowing for easy downloading of new files and setting up new directories for challenges. 
 
-The repo uses the following structure:
+Per [AOC Requirements](https://www.reddit.com/r/adventofcode/wiki/faqs/automation/), this script automatically caches input files so they don't need to be read again. It also grabs the test input (if there is one!) and puts it in the same directory.
 
-```text
-.
-├── aoc             # Driver script
-├── input           # Input files
-├── src             # Source files
-└── utils           # aoc utility scripts
+The easiest way to run a file given its input is:
+
+```bash
+$ ./main.py <real.txt
 ```
 
-You can get a challenge input using `./aoc fetch <year> <date>` (or calling `./utils/aoc-fetch`
-directly). This requires an `AOC_SESSION` environment set, which I have inside
-`utils/aoc-session`.
+This bash syntax pipes the contents of `real.txt` into `./main.py`. Then, you can use `sys.stdin` to read it however you want (via `sys.stdin.readline`, etc.). 
 
-> _Of course, `utils/aoc-session` is gitignored. Also, by request of Eric Wastl (the AoC author),
-> the input files are also gitignored._
+> _Of course, you can also use `open("real.txt")` if you want to work with a file pointer and run your script as `./main.py`_.
 
-Then, build an AoC challenge with `./aoc <lang> <year> <date>`. Each supported language uses
-its proprietary framework for building.
+## Languages
 
-# Languages
-
-My goal is to solve each challenge using multiple languages to provide the most exposure. The
-current languages I have solves with:
+My goal is to solve each challenge using multiple languages to provide the most exposure. The current languages I have solves with:
 
 | **Language** | **Solves** |
 | ------------ | ---------- |
@@ -43,15 +31,13 @@ current languages I have solves with:
 | C            | 28         |
 | Python       | 105        |
 
-> _This table is automatically updated using the [aoc-readme](./utils/aoc-readme) script. It
-> only uses the number of existing files to guess-timate this value, so it may be off if unfinished
-> challenges were pushed accidentally._
+> _This table is automatically updated using the `aoc` CLI. Sometimes it can be off if a file was accidentally introduced but not fully complete._
 
 Here's a little more about the languages I use:
 
 - **ASM**: x86_64 NASM compiled with Makefile. `glibc` is not used at all - syscalls only!
 - **Bash**: Bash v5.2. Not necessarily POSIX compliant. To the greatest extent possible, only using shell built-ins. A future task will be ridding the `aoc` scripts as well.
-- **C**: C99 compiled with Makefile. To the greatest extent possible, not requiring other linked libraries.
+- **C**: C99 compiled using `gcc`. I was using a library file with a bunch of cheater-functions, but I'm slowly removing its use in favor of solving things the C way.
 - **Python**: My speed language I use on challenge day. The only non-default libraries I use (so far) are `numpy` and `networkx`.
 
 # Challenge Calendars
@@ -62,11 +48,32 @@ These calendars indicate solves in _at least one_ language.
 <tr>
 <td valign="top">
 
+### 2026 Challenges (0/24)
+
+| M       | T       | W       | R       | F       | S       | U       |
+| ------- | ------- | ------- | ------- | ------- | ------- | ------- |
+|         |         |         |         |         |         |         |
+|         |         |         |         |         |         |         |
+
+</td>
+<td valign="top">
+
+### 2025 Challenges (14/24)
+
+| M       | T       | W       | R       | F       | S       | U       |
+| ------- | ------- | ------- | ------- | ------- | ------- | ------- |
+| :star2: | :star2: | :star2: | :star2: | :star2: | :star2: | :star2: |
+|         |         |         |         |         |         |         |
+
+</td>
+</tr>
+<tr>
+<td valign="top">
+
 ### 2024 Challenges (50/50)
 
 | M       | T       | W       | R       | F       | S       | U       |
 | ------- | ------- | ------- | ------- | ------- | ------- | ------- |
-|         |         |         |         |         |         | :star2: |
 | :star2: | :star2: | :star2: | :star2: | :star2: | :star2: | :star2: |
 | :star2: | :star2: | :star2: | :star2: | :star2: | :star2: | :star2: |
 | :star2: | :star2: | :star2: | :star2: | :star2: | :star2: | :star2: |

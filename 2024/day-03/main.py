@@ -21,7 +21,6 @@ for match in matches:
     nums = re.findall(r"\d+", match)
     if len(nums) == 0:
         DO = "don" not in match
-    else:
-        if DO:
-            TWO += int(nums[0]) * int(nums[1])
+    elif DO:
+        TWO += int(nums[0]) * int(nums[1])
 print("TWO:", TWO)

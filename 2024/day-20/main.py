@@ -24,11 +24,7 @@ x, y = next((x, y) for y, r in enumerate(grid) for x, c in enumerate(r) if c == 
 t = [None, (x, y)]
 
 while grid[y][x] != "E":
-    x, y = next(
-        n
-        for n in ((x - 1, y), (x + 1, y), (x, y - 1), (x, y + 1))
-        if n != t[-2] and grid[n[1]][n[0]] != "#"
-    )
+    x, y = next(n for n in ((x - 1, y), (x + 1, y), (x, y - 1), (x, y + 1)) if n != t[-2] and grid[n[1]][n[0]] != "#")
     t.append((x, y))
 
 print("ONE:", sum(s >= 100 for s in cheat(t[1:], 2)))

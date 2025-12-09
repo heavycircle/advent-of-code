@@ -4,20 +4,14 @@ import itertools as it
 import sys
 
 coords = set(
-    (r, c)
-    for r, ln in enumerate(iter(sys.stdin.readline, ""))
-    for c, ch in enumerate(ln.strip())
-    if ch == "@"
+    (r, c) for r, ln in enumerate(iter(sys.stdin.readline, "")) for c, ch in enumerate(ln.strip()) if ch == "@"
 )
 
 
 def valid(lst):
     """Check how many deltas are in each direction"""
     return set(
-        (x, y)
-        for x, y in lst
-        if sum((x + dx, y + dy) in lst for dx, dy in it.product((-1, 0, 1), repeat=2))
-        <= 4
+        (x, y) for x, y in lst if sum((x + dx, y + dy) in lst for dx, dy in it.product((-1, 0, 1), repeat=2)) <= 4
     )
 
 

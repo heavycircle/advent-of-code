@@ -60,12 +60,8 @@ C = 1e3
 for w in ww.items():
     for a in aa.items():
         for r1, r2 in combinations(rr, 2):
-            p["damage"] = (
-                ww[w]["damage"] + aa[a]["damage"] + rr[r1]["damage"] + rr[r2]["damage"]
-            )
-            p["armor"] = (
-                ww[w]["armor"] + aa[a]["armor"] + rr[r1]["armor"] + rr[r2]["armor"]
-            )
+            p["damage"] = ww[w]["damage"] + aa[a]["damage"] + rr[r1]["damage"] + rr[r2]["damage"]
+            p["armor"] = ww[w]["armor"] + aa[a]["armor"] + rr[r1]["armor"] + rr[r2]["armor"]
             p["cost"] = ww[w]["cost"] + aa[a]["cost"] + rr[r1]["cost"] + rr[r2]["cost"]
             if fight(p.copy(), boss.copy()):
                 C = min(C, p["cost"])
@@ -75,12 +71,8 @@ C = 0
 for w in ww:
     for a in aa:
         for r1, r2 in combinations(rr, 2):
-            p["damage"] = (
-                ww[w]["damage"] + aa[a]["damage"] + rr[r1]["damage"] + rr[r2]["damage"]
-            )
-            p["armor"] = (
-                ww[w]["armor"] + aa[a]["armor"] + rr[r1]["armor"] + rr[r2]["armor"]
-            )
+            p["damage"] = ww[w]["damage"] + aa[a]["damage"] + rr[r1]["damage"] + rr[r2]["damage"]
+            p["armor"] = ww[w]["armor"] + aa[a]["armor"] + rr[r1]["armor"] + rr[r2]["armor"]
             p["cost"] = ww[w]["cost"] + aa[a]["cost"] + rr[r1]["cost"] + rr[r2]["cost"]
             if not fight(p.copy(), boss.copy()):
                 C = max(C, p["cost"])

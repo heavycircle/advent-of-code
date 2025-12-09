@@ -1,9 +1,16 @@
 import datetime as dt
 import os
+import sys
 
-from ..logger import get_logger
+from cli.logger import get_logger
 
 logger = get_logger()
+
+START_YEAR = 2015
+LAST_LONG_YEAR = 2024
+LONG_DAYS = 25
+FIRST_SHORT_YEAR = 2025
+SHORT_DAYS = 12
 
 
 def get_token() -> str:
@@ -11,7 +18,7 @@ def get_token() -> str:
     token = os.getenv("AOC_SESSION", "")
     if not token:
         logger.error("Missing AOC_SESSION!")
-        exit(1)
+        sys.exit(1)
 
     return token
 
@@ -20,9 +27,9 @@ def validate_date(year: int, day: int) -> bool:
     """Validate we can get a file with this date"""
 
     # Basic sanity checking
-    if year < 2015:
+    if year < START_YEAR:
         return False
-    if 2015 <= year <= 2024 and 1 <= day <= 25:
+    if START_YEAR <= year <= LAST_LONG_YEAR and 1 <= day <= LONG_DAYS:
         return True
 
     # Current day - Ensure it's after midnight

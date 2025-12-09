@@ -33,6 +33,4 @@ for n in tn:
     G2.add_edge(v1, v2, d=new_weight)
     G2.remove_node(n)
 
-print(
-    "Part 2:", max(path_weight(G2, path, "d") for path in nx.all_simple_paths(G2, s, t))
-)
+print("Part 2:", max(path_weight(G2, path, "d") for path in nx.all_simple_paths(G2, s, t)))

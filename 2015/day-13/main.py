@@ -20,9 +20,7 @@ def solve(tp):
     """Find maximum happiness"""
     r = 0
     for t in permutations(tp):
-        h = sum(
-            [hh[(t[i], t[i + 1])] + hh[(t[i + 1], t[i])] for i in range(len(t) - 1)]
-        )
+        h = sum([hh[(t[i], t[i + 1])] + hh[(t[i + 1], t[i])] for i in range(len(t) - 1)])
         h += hh[(t[0], t[-1])] + hh[(t[-1], t[0])]
         r = max(r, h)
     return r

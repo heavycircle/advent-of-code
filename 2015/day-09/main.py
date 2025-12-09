@@ -23,9 +23,7 @@ def min_recurse(city, visited):
     if len(visited) == len(cities):
         return 0
     visited.add(city)
-    return min(
-        distances[(city, c)] + min_recurse(c, visited | {c}) for c in cities - visited
-    )
+    return min(distances[(city, c)] + min_recurse(c, visited | {c}) for c in cities - visited)
 
 
 def max_recurse(city, visited):
@@ -33,9 +31,7 @@ def max_recurse(city, visited):
     if len(visited) == len(cities):
         return 0
     visited.add(city)
-    return max(
-        distances[(city, c)] + max_recurse(c, visited | {c}) for c in cities - visited
-    )
+    return max(distances[(city, c)] + max_recurse(c, visited | {c}) for c in cities - visited)
 
 
 print("Part 1:", min(min_recurse(c, set()) for c in cities))

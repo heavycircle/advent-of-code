@@ -36,10 +36,6 @@ for line in stream:
     if (
         all(goal[k] < d[k] for k in d if k in ["cats", "trees"])
         and all(goal[k] > d[k] for k in d if k in ["pomeranians", "goldfish"])
-        and all(
-            goal[k] == d[k]
-            for k in d
-            if k not in ["cats", "trees", "pomeranians", "goldfish"]
-        )
+        and all(goal[k] == d[k] for k in d if k not in ["cats", "trees", "pomeranians", "goldfish"])
     ):
         print("Part 2:", nn)

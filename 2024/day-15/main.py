@@ -47,12 +47,7 @@ for x in ["ONE", "TWO"]:
 
     # Part 2 expansion
     if x == "TWO":
-        f = (
-            f.replace(".", "..")
-            .replace("#", "##")
-            .replace("O", "[]")
-            .replace("@", "@.")
-        )
+        f = f.replace(".", "..").replace("#", "##").replace("O", "[]").replace("@", "@.")
 
     # Build floor
     f = f.splitlines()

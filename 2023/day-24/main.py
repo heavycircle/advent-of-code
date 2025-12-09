@@ -43,7 +43,11 @@ for pp in combinations(data, 2):
         ONE += 1
 print("Part 1:", ONE)
 
-I = lambda n: z3.BitVec(n, 64)
+
+def I(n):
+    return z3.BitVec(n, 64)
+
+
 x, y, z = I("x"), I("y"), I("z")
 vx, vy, vz = I("vx"), I("vy"), I("vz")
 s = z3.Solver()

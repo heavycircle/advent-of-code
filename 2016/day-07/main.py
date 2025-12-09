@@ -10,12 +10,7 @@ import aoclib
 
 stream = aoclib.get_data(year=2016, day=7).splitlines()
 
-ONE = sum(
-    1
-    for l in stream
-    if re.search(r"(\w)(?!\1)(\w)\2\1", l)
-    and not re.search(r"\[\w*(\w)(?!\1)(\w)\2\1\w*]", l)
-)
+ONE = sum(1 for l in stream if re.search(r"(\w)(?!\1)(\w)\2\1", l) and not re.search(r"\[\w*(\w)(?!\1)(\w)\2\1\w*]", l))
 print("Part 1:", ONE)
 
 ssl = re.compile(r"(?=((.)(?!\2)(.)\2))")

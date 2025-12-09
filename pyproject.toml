@@ -6,9 +6,28 @@ authors = [{name = "heavycircle"}]
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
+    "codespell>=2.4.1",
+    "isort>=7.0.0",
     "requests>=2.30",
+    "ruff>=0.13.2",
     "typer>=0.20.0"
 ]
 
 [project.scripts]
 aoc = "cli.cli:app"
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "C90", "PL", "I"]
+ignore = ["B905", "E501", "E741", "E743"]
+
+[tool.isort]
+line_length = 120
+profile = "black"
+py_version = 39
+
+[tool.codespell]
+skip = "*/real.txt,test.txt"

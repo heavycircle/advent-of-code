@@ -23,10 +23,7 @@ def neighbors(gg, x, y):
 def step(gg):
     """Gets next step of grid"""
     return [
-        [
-            (neighbors(gg, i, j) == 3 or (gg[i][j] and neighbors(gg, i, j) == 2))
-            for j in range(len(gg[0]))
-        ]
+        [(neighbors(gg, i, j) == 3 or (gg[i][j] and neighbors(gg, i, j) == 2)) for j in range(len(gg[0]))]
         for i in range(len(gg))
     ]
 

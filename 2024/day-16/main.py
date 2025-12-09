@@ -16,9 +16,7 @@ data = aoclib.get_data(day=16, year=2024)
 rows = data.splitlines()
 width = len(rows[0])
 grid = list(map(list, rows))
-start, end = Point(*divmod(data.find("S"), width + 1)), Point(
-    *divmod(data.find("E"), width + 1)
-)
+start, end = Point(*divmod(data.find("S"), width + 1)), Point(*divmod(data.find("E"), width + 1))
 
 
 def heuristic(p):

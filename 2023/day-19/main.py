@@ -36,12 +36,7 @@ for r in stream[0].splitlines():
 
 ss = []
 for s in stream[1].splitlines():
-    s = eval(
-        re.sub(r"(\w+)=(-?\d+)", r'"\1": \2', s)
-        .replace("=", ": ")
-        .replace("{", "{ ")
-        .replace("}", " }")
-    )
+    s = eval(re.sub(r"(\w+)=(-?\d+)", r'"\1": \2', s).replace("=", ": ").replace("{", "{ ").replace("}", " }"))
     ss.append(s)
 
 
@@ -63,11 +58,7 @@ def recurse(xmas, rule):
     nx1, nx2, cc = xmas.copy(), xmas.copy(), 0
     # Base case: at accept/reject
     if rule in ["A", "R"]:
-        return (
-            0
-            if rule == "R"
-            else prod(len(list(P.iterate(b, step=1))) for b in xmas.values())
-        )
+        return 0 if rule == "R" else prod(len(list(P.iterate(b, step=1))) for b in xmas.values())
     if isinstance(rule, str):
         rule = rules[rule]
 

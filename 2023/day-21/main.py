@@ -36,10 +36,7 @@ def reach(mm, sp, ss):
 
 def reach_around(ss):
     """Approximate number of plots reachable in ss steps for an infinite grid"""
-    exp = [
-        [gg[i % len(gg)][j % len(gg[0])] for j in range(5 * len(gg[0]))]
-        for i in range(5 * len(gg))
-    ]
+    exp = [[gg[i % len(gg)][j % len(gg[0])] for j in range(5 * len(gg[0]))] for i in range(5 * len(gg))]
     sp = len(exp) // 2, len(exp[0]) // 2
     yy = [reach(exp, sp, s) for s in [65, 65 + 131, 65 + 131 * 2]]
     xx = np.array([0, 1, 2])

@@ -20,9 +20,7 @@ def blink(r, i, end):
     if r == 0:
         return blink(1, i + 1, end)
     elif len(str(r)) % 2 == 0:
-        return blink(int(str(r)[: len(str(r)) // 2]), i + 1, end) + blink(
-            int(str(r)[len(str(r)) // 2 :]), i + 1, end
-        )
+        return blink(int(str(r)[: len(str(r)) // 2]), i + 1, end) + blink(int(str(r)[len(str(r)) // 2 :]), i + 1, end)
     else:
         return blink(r * 2024, i + 1, end)
 

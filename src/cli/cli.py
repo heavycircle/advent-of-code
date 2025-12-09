@@ -5,6 +5,7 @@ import typer
 
 from .fetch import fetch
 from .logger import get_logger
+from .readme import update_readme
 
 app = typer.Typer()
 logger = get_logger()
@@ -37,3 +38,10 @@ def run(year: int, day: int, lang: str = "py"):
     if not fetch(year, day):
         logger.error("Could not fetch input files!")
         return False
+
+
+@app.command()
+def readme():
+    """Update the README with the number of solves."""
+
+    update_readme()
