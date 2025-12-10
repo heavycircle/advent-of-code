@@ -7,7 +7,7 @@ import sys
 data = [tuple(map(int, ln.split(","))) for ln in iter(sys.stdin.readline, "")]
 
 one = max(math.prod(abs(y - x) + 1 for x, y in zip(a, b)) for a, b in it.combinations(data, 2))
-print(one)
+print(f"ONE: {one}")
 
 
 def inside(pt1, pt2, polygon):
@@ -26,4 +26,4 @@ def inside(pt1, pt2, polygon):
 
 
 two = max(math.prod(abs(y - x) + 1 for x, y in zip(a, b)) for a, b in it.combinations(data, 2) if inside(a, b, data))
-print(two)
+print(f"TWO: {two}")
