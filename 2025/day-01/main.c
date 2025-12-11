@@ -1,4 +1,3 @@
-#include <aoclib.h>
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -36,7 +35,7 @@ int rotate(int *cur, char *rot)
 
 int main(void)
 {
-    FILE *fp = get_datafile(2025, 1);
+    FILE *fp = fopen("real.txt", "r");
 
     char *line = NULL;
     size_t len;

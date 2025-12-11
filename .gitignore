@@ -15,6 +15,9 @@ build/
 /.cache
 *.txt
 
+# Build Files
+main
+
 # OS Files
 .DS_Store
 Thumbs.db
