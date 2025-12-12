@@ -6,7 +6,7 @@ This repository reflects the effort I've put into solving advent of code challen
 
 ## AOC CLI
 
-This repository comes equipped with a CLI allowing for easy downloading of new files and setting up new directories for challenges. 
+This repository comes equipped with a CLI allowing for easy downloading of new files and setting up new directories for challenges.
 
 Per [AOC Requirements](https://www.reddit.com/r/adventofcode/wiki/faqs/automation/), this script automatically caches input files so they don't need to be read again. It also grabs the test input (if there is one!) and puts it in the same directory.
 
@@ -16,7 +16,7 @@ The easiest way to run a file given its input is:
 $ ./main.py <real.txt
 ```
 
-This bash syntax pipes the contents of `real.txt` into `./main.py`. Then, you can use `sys.stdin` to read it however you want (via `sys.stdin.readline`, etc.). 
+This bash syntax pipes the contents of `real.txt` into `./main.py`. Then, you can use `sys.stdin` to read it however you want (via `sys.stdin.readline`, etc.).
 
 > _Of course, you can also use `open("real.txt")` if you want to work with a file pointer and run your script as `./main.py`_.
 
@@ -50,20 +50,20 @@ These calendars indicate solves in _at least one_ language.
 
 ### 2026 Challenges (0/24)
 
-| M       | T       | W       | R       | F       | S       | U       |
-| ------- | ------- | ------- | ------- | ------- | ------- | ------- |
-|         |         |         |         |         |         |         |
-|         |         |         |         |         |         |         |
+| M   | T   | W   | R   | F   | S   | U   |
+| --- | --- | --- | --- | --- | --- | --- |
+|     |     |     |     |     |     |     |
+|     |     |     |     |     |     |     |
 
 </td>
 <td valign="top">
 
-### 2025 Challenges (14/24)
+### 2025 Challenges (24/24)
 
 | M       | T       | W       | R       | F       | S       | U       |
 | ------- | ------- | ------- | ------- | ------- | ------- | ------- |
 | :star2: | :star2: | :star2: | :star2: | :star2: | :star2: | :star2: |
-|         |         |         |         |         |         |         |
+| :star2: | :star2: | :star2: | :star2: | :star2: |         |         |
 
 </td>
 </tr>
