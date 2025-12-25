@@ -1,15 +1,16 @@
-# Virtual Environment
-/.venv
-
-# Python build artifacts
+# Byte Compiled Files
 __pycache__
-*.py{c,o}
+*.py[codz]
 
-# Installation
+# Distribution
 .*_cache/
 dist/
 build/
 *.egg-info/
+
+# Virtual Environment
+.venv/
+venv/
 
 # Input files
 /.cache
@@ -25,4 +26,4 @@ Thumbs.db
 # IDE Files
 .idea/
 .vscode/
-*.swp
+*.sw[op]

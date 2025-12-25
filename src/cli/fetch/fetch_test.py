@@ -26,7 +26,7 @@ def fetch_test(year: int, day: int) -> bool:
         f"https://adventofcode.com/{year}/day/{day}",
         headers={"User-Agent": "heavycircle (+https://github.com/heavycircle)"},
     )
-    assert res.status_code == 200
+    assert res.status_code == requests.codes.ok
 
     # Find the first <code> tag inside a <pre> tag
     soup = BeautifulSoup(res.content, "html.parser")

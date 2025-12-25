@@ -2,16 +2,20 @@
 name = "advent-of-code"
 version = "2.1.0"
 description = "Advent of Code CLI Tool"
-authors = [{name = "heavycircle"}]
+authors = [{ name = "heavycircle" }]
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
-    "codespell>=2.4.1",
-    "isort>=7.0.0",
+    "bs4>=0.0.2",
+    "networkx>=3.4.2",
+    "numpy>=2.2.6",
     "requests>=2.30",
-    "ruff>=0.13.2",
-    "typer>=0.20.0"
+    "typer>=0.20.0",
+    "z3-solver>=4.15.4.0",
 ]
+
+[project.optional-dependencies]
+lint = ["codespell>=2.4.1", "isort>=7.0.0", "ruff>=0.13.2"]
 
 [project.scripts]
 aoc = "cli.cli:app"
@@ -21,7 +25,7 @@ line-length = 120
 target-version = "py310"
 
 [tool.ruff.lint]
-select = ["E", "F", "I", "B", "C90", "PL", "I"]
+select = ["E", "W", "F", "I", "B", "C90", "PL"]
 ignore = ["B905", "E501", "E741", "E743"]
 
 [tool.isort]
