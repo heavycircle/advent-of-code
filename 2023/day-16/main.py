@@ -8,6 +8,7 @@ import sys
 
 import aoclib
 
+
 sys.setrecursionlimit(1000000)
 
 stream = aoclib.get_data(day=16, year=2023).splitlines()

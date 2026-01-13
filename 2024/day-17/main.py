@@ -8,6 +8,7 @@ import re
 
 import aoclib
 
+
 data = aoclib.get_data(day=17, year=2024)
 a, b, c, *prog = map(int, re.findall(r"\d+", data))
 

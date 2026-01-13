@@ -3,6 +3,7 @@
 import functools as ft
 import sys
 
+
 # networkx was super tempting today until it died on part 2.
 # The graph has 596 nodes and 1696 edges. We need a caching
 # solution to get this done.

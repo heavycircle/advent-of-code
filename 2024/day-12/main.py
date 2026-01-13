@@ -8,6 +8,7 @@ from collections import deque
 
 import aoclib
 
+
 dirs = [(-1, 0, "L"), (0, -1, "TU"), (1, 0, "R"), (0, 1, "D")]
 
 

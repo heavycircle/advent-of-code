@@ -6,6 +6,7 @@
 
 import aoclib
 
+
 stream = aoclib.get_data(day=6, year=2015).splitlines()
 grid = [[0 for _ in range(1000)] for _ in range(1000)]
 

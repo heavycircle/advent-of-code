@@ -2,6 +2,7 @@
 
 import sys
 
+
 ranges = sorted(tuple(map(int, ln.split("-"))) for ln in iter(sys.stdin.readline, "\n"))
 ids = list(map(int, iter(sys.stdin.readline, "")))
 

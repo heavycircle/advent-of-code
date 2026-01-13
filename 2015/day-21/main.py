@@ -8,6 +8,7 @@ from itertools import combinations
 
 import aoclib
 
+
 stream = aoclib.get_data(year=2015, day=21).splitlines()
 
 boss = {

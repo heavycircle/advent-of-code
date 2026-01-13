@@ -6,6 +6,7 @@
 
 import aoclib
 
+
 stream = aoclib.get_data(day=1, year=2015)
 
 one = stream.count("(") - stream.count(")")

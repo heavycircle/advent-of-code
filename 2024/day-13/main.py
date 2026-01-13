@@ -4,6 +4,7 @@ import re
 
 import aoclib
 
+
 data = aoclib.get_data(day=13, year=2024).split("\n\n")
 
 # Regex to get the numbers

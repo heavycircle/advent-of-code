@@ -4,6 +4,7 @@ import re
 
 import aoclib
 
+
 data = aoclib.get_data(day=14, year=2024)
 
 g = [0 for _ in range(4)]

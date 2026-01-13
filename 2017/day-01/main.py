@@ -6,6 +6,7 @@
 
 import aoclib
 
+
 data = aoclib.get_data(day=1, year=2017)
 
 ONE = 0

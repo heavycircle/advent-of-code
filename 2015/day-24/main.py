@@ -10,6 +10,7 @@ from operator import mul
 
 import aoclib
 
+
 stream = aoclib.get_data(year=2015, day=24).splitlines()
 data = sorted(list(map(int, stream)), reverse=True)
 

@@ -6,6 +6,7 @@
 
 import aoclib
 
+
 data = aoclib.get_data(day=4, year=2024)
 search = []
 for ln in data.splitlines():

@@ -8,6 +8,7 @@ from functools import reduce
 
 import aoclib
 
+
 data = aoclib.get_data(day=6, year=2023).splitlines()
 times = list(map(int, data[0].split(":")[1].strip().split()))
 dists = list(map(int, data[1].split(":")[1].strip().split()))

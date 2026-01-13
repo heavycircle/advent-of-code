@@ -4,6 +4,7 @@ import sys
 
 from cli.logger import get_logger
 
+
 logger = get_logger()
 
 START_YEAR = 2015

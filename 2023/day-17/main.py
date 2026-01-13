@@ -8,6 +8,7 @@ from heapq import heappop, heappush
 
 import aoclib
 
+
 stream = aoclib.get_data(day=17, year=2023).strip().splitlines()
 
 data = [[int(y) for y in x] for x in stream]

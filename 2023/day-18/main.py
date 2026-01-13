@@ -7,6 +7,7 @@
 import aoclib
 from skspatial.measurement import area_signed
 
+
 stream = aoclib.get_data(day=18, year=2023).splitlines()
 data = [line.split() for line in stream]
 

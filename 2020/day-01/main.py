@@ -4,6 +4,7 @@ from itertools import combinations
 
 from aoclib import get_data
 
+
 data = get_data(year=2020, day=1)
 lst = list(map(int, data.splitlines()))
 

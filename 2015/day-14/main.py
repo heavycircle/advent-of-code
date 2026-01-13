@@ -8,6 +8,7 @@ import re
 
 import aoclib
 
+
 stream = aoclib.get_data(day=14, year=2015).splitlines()
 TT = 2503
 

@@ -4,6 +4,7 @@ import sys
 
 import networkx as nx
 
+
 nodes = [tuple(map(int, ln.split(","))) for ln in iter(sys.stdin.readline, "")]
 N = len(nodes)
 

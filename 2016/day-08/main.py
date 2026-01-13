@@ -6,6 +6,7 @@
 
 import aoclib
 
+
 stream = aoclib.get_data(year=2016, day=8).splitlines()
 # Stream = open("test.txt").read().splitlines()
 

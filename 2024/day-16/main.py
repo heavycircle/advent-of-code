@@ -9,6 +9,7 @@ from math import sqrt
 
 import aoclib
 
+
 Point = namedtuple("Point", ["y", "x"])
 Node = namedtuple("Node", ["p", "d"])
 

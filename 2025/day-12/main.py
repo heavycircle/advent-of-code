@@ -2,6 +2,7 @@
 
 import sys
 
+
 data = sys.stdin.read().split("\n\n")
 
 presents = {i: s.count("#") for i, s in enumerate(data[:-1])}

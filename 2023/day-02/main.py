@@ -6,6 +6,7 @@
 
 import aoclib
 
+
 data = aoclib.get_data(day=2, year=2023).splitlines()
 
 red = 12

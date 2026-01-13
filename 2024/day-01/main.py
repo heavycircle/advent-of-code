@@ -6,6 +6,7 @@
 
 import aoclib
 
+
 data = aoclib.get_data(day=1, year=2024).splitlines()
 
 left = []

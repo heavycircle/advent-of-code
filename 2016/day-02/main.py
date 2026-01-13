@@ -6,6 +6,7 @@
 
 import aoclib
 
+
 stream = aoclib.get_data(year=2016, day=2).splitlines()
 
 DIRS = {"U": (0, -1), "R": (1, 0), "D": (0, 1), "L": (-1, 0)}

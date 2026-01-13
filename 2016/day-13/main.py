@@ -4,6 +4,7 @@ from collections import deque
 
 import aoclib
 
+
 data = aoclib.get_data(day=13, year=2016)
 
 dirs = [(-1, 0), (1, 0), (0, -1), (0, 1)]

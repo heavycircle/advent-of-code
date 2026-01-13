@@ -15,7 +15,12 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-lint = ["codespell>=2.4.1", "isort>=7.0.0", "ruff>=0.13.2"]
+lint = [
+    "codespell>=2.4.1",
+    "isort>=7.0.0",
+    "mypy>=1.19.1",
+    "ruff>=0.13.2",
+]
 
 [project.scripts]
 aoc = "cli.cli:app"

@@ -6,6 +6,7 @@
 
 import aoclib
 
+
 stream = aoclib.get_data(day=14, year=2022)
 
 

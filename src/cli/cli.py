@@ -7,6 +7,7 @@ from .fetch import fetch
 from .logger import get_logger
 from .readme import update_readme
 
+
 app = typer.Typer()
 logger = get_logger()
 

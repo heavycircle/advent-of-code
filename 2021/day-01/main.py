@@ -2,6 +2,7 @@
 
 import sys
 
+
 lst = list(map(int, iter(sys.stdin.readline, "")))
 
 one = sum(1 for a, b in zip(lst, lst[1:]) if b > a)

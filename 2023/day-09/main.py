@@ -6,6 +6,7 @@
 
 import aoclib
 
+
 print(aoclib.get_data(day=9, year=2023))
 
 data = [x.strip().split() for x in aoclib.get_data(day=9, year=2023).splitlines()]

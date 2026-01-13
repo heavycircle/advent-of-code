@@ -6,6 +6,7 @@
 
 import aoclib
 
+
 stream = aoclib.get_data(day=18, year=2015).splitlines()
 og = [[c == "#" for c in line] for line in stream]
 

@@ -9,6 +9,7 @@ from math import prod
 import aoclib
 import networkx as nx
 
+
 stream = aoclib.get_data(day=25, year=2023).splitlines()
 data = {}
 for ll in stream:

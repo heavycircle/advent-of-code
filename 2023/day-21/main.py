@@ -9,6 +9,7 @@ from collections import deque
 import aoclib
 import numpy as np
 
+
 stream = aoclib.get_data(day=21, year=2023).splitlines()
 DIRS = [(0, 1), (1, 0), (0, -1), (-1, 0)]
 

@@ -8,6 +8,7 @@ from collections import deque
 
 import aoclib
 
+
 data = aoclib.get_data(day=18, year=2024)
 grid = [tuple(map(int, x.strip().split(","))) for x in data.splitlines()]
 

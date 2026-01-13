@@ -9,6 +9,7 @@ import re
 
 import aoclib
 
+
 data = aoclib.get_data(day=24, year=2024)
 W, G = data.split("\n\n")
 

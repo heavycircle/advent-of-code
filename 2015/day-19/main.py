@@ -8,6 +8,7 @@ import re
 
 import aoclib
 
+
 stream = aoclib.get_data(year=2015, day=19).split("\n\n")
 
 rr = re.findall(r"(\w+) => (\w+)", stream[0])

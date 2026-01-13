@@ -11,6 +11,7 @@ from math import prod
 import aoclib
 import portion as P
 
+
 stream = aoclib.get_data(day=19, year=2023).split("\n\n")
 
 

@@ -8,6 +8,7 @@ from functools import reduce
 
 import aoclib
 
+
 stream = aoclib.get_data(day=4, year=2023)
 data = [x.strip() for x in stream.splitlines()]
 

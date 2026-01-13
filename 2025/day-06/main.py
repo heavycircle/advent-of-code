@@ -3,6 +3,7 @@
 import math
 import sys
 
+
 problems = [list(ln) for ln in iter(sys.stdin.readline, "")]
 cols = zip(*problems)
 

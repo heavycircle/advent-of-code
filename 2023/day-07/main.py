@@ -8,6 +8,7 @@ import collections
 
 import aoclib
 
+
 lines = [x.strip() for x in aoclib.get_data(day=7, year=2023).splitlines()]
 
 

@@ -10,6 +10,7 @@ from itertools import combinations
 import aoclib
 import z3
 
+
 stream = aoclib.get_data(day=24, year=2023).splitlines()
 data = []
 for ll in stream:

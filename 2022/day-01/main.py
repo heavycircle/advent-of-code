@@ -6,6 +6,7 @@
 
 import aoclib
 
+
 d = [z.split() for z in aoclib.get_data(day=1, year=2022).split("\n\n")]
 
 # Part 1

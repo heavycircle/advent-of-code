@@ -8,6 +8,7 @@ from functools import cache
 
 import aoclib
 
+
 data = aoclib.get_data(day=21, year=2024)
 
 

@@ -5,6 +5,7 @@ from datetime import datetime
 
 from aoclib import get_data
 
+
 data = get_data(year=2018, day=4)
 
 guards = defaultdict(Counter)

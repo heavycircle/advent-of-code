@@ -8,6 +8,7 @@ import aoclib
 import networkx as nx
 from networkx.classes.function import path_weight
 
+
 stream = aoclib.get_data(day=23, year=2023).split()
 SPEC = {">": (0, -1), "<": (0, 1), "^": (1, 0), "v": (-1, 0)}
 

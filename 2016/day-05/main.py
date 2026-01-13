@@ -8,6 +8,7 @@ from hashlib import md5
 
 import aoclib
 
+
 stream = aoclib.get_data(year=2016, day=5).strip()
 
 ONE = ""

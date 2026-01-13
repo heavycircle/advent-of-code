@@ -6,6 +6,7 @@
 
 import aoclib
 
+
 data = aoclib.get_data(day=8, year=2024)
 
 # Make the grid

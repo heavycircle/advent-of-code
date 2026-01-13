@@ -3,6 +3,7 @@
 import itertools as it
 import sys
 
+
 coords = set(
     (r, c) for r, ln in enumerate(iter(sys.stdin.readline, "")) for c, ch in enumerate(ln.strip()) if ch == "@"
 )

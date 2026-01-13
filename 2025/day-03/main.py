@@ -2,6 +2,7 @@
 
 import sys
 
+
 data = [list(map(int, ln.strip())) for ln in iter(sys.stdin.readline, "")]
 
 

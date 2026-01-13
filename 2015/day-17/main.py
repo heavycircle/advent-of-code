@@ -8,6 +8,7 @@ from itertools import combinations
 
 import aoclib
 
+
 stream = aoclib.get_data(day=17, year=2015).splitlines()
 data = [int(line) for line in stream]
 

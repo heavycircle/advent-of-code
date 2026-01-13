@@ -2,6 +2,7 @@
 
 from aoclib import get_data
 
+
 data = get_data(year=2018, day=2)
 
 

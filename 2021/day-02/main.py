@@ -2,6 +2,7 @@
 
 import aoclib
 
+
 data = aoclib.get_data(year=2021, day=2)
 
 x, y = 0, 0

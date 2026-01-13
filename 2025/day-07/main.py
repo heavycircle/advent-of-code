@@ -2,6 +2,7 @@
 
 import sys
 
+
 data = [ln.strip() for ln in iter(sys.stdin.readline, "")]
 
 beams = [0] * len(data[0])

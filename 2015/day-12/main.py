@@ -9,6 +9,7 @@ import re
 
 import aoclib
 
+
 stream = aoclib.get_data(day=12, year=2015)
 
 one = sum(map(int, re.findall(r"-?\d+", stream)))

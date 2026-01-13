@@ -7,6 +7,7 @@
 import aoclib
 import networkx as nx
 
+
 data = aoclib.get_data(day=23, year=2024)
 
 # Build Graph

@@ -6,6 +6,7 @@
 
 import aoclib
 
+
 raw_data = aoclib.get_data(day=5, year=2022).splitlines()
 
 # Strip the lines

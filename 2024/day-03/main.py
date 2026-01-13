@@ -8,6 +8,7 @@ import re
 
 import aoclib
 
+
 data = aoclib.get_data(day=3, year=2024)
 
 matches = re.findall(r"mul\((\d+),(\d+)\)", data)

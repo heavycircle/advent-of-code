@@ -4,6 +4,7 @@ import sys
 from rich.console import Console
 from rich.logging import RichHandler
 
+
 LOG_LEVEL = logging.INFO
 FORMAT = "%(message)s"
 

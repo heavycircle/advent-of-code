@@ -5,6 +5,7 @@ import sys
 
 import z3
 
+
 one, two = 0, 0
 for ln in iter(sys.stdin.readline, ""):
     light, *wires, joltage = ln.split()
@@ -17,7 +18,7 @@ for ln in iter(sys.stdin.readline, ""):
         i
         for i in it.count(0)
         for comb in it.combinations(pattern, i)
-        if "".join(".#"[sum((i in p for p in comb)) % 2] for i in range(len(light))) == light
+        if "".join(".#"[sum(i in p for p in comb) % 2] for i in range(len(light))) == light
     )
 
     # I can't say I knew how to do this part on my own. Definitely got help

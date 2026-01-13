@@ -8,6 +8,7 @@ from itertools import permutations
 
 import aoclib
 
+
 stream = aoclib.get_data(day=13, year=2015).splitlines()
 
 hh = {}

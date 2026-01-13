@@ -8,6 +8,7 @@ from itertools import zip_longest
 
 import aoclib
 
+
 stream = aoclib.get_data(day=13, year=2022)
 
 

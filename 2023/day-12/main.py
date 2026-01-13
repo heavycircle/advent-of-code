@@ -6,6 +6,7 @@
 
 import aoclib
 
+
 stream = aoclib.get_data(day=12, year=2023).splitlines()
 data = [x.strip() for x in stream]
 grid = {}
@@ -47,4 +48,4 @@ for second in [False, True]:
         grid.clear()
         zz = score(line, goal, 0, 0, 0)
         PART += zz
-    print("Part {}:".format(2 if second else 1), PART)
+    print(f"Part {2 if second else 1}:", PART)

@@ -7,6 +7,7 @@
 import aoclib
 import numpy as np
 
+
 stream = aoclib.get_data(day=14, year=2022)
 
 lines = [l.strip() for l in stream.splitlines()]

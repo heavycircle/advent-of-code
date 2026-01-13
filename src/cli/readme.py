@@ -4,6 +4,7 @@ import re
 
 from .logger import get_logger
 
+
 logger = get_logger()
 
 LANG_MAP = {".py": "Python", ".c": "C", ".bash": "Bash", ".asm": "ASM"}

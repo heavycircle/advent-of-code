@@ -6,6 +6,7 @@
 
 import aoclib
 
+
 stream = aoclib.get_data(day=22, year=2023).splitlines()
 data = [[list(map(int, y.split(","))) for y in l.split("~")] for l in stream]
 

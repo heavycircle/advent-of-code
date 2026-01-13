@@ -5,6 +5,7 @@ from collections import defaultdict
 
 import aoclib
 
+
 data = aoclib.get_data(year=2018, day=3).splitlines()
 
 # Populate the seen

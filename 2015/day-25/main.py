@@ -6,6 +6,7 @@
 
 import aoclib
 
+
 stream = aoclib.get_data(year=2015, day=25).split()
 r, c = int(stream[-3][:-1]), int(stream[-1][:-1])
 

@@ -4,6 +4,7 @@ import sys
 
 import numpy as np
 
+
 data = iter(sys.stdin.readline, "")
 
 lock = np.array([50, 49])

@@ -6,6 +6,7 @@
 
 import aoclib
 
+
 # Get data
 data = aoclib.get_data(day=9, year=2024)
 num = data.strip()
