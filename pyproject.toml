@@ -1,3 +1,7 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
 [project]
 name = "advent-of-code"
 version = "2.1.0"
@@ -5,35 +9,77 @@ description = "Advent of Code CLI Tool"
 authors = [{ name = "heavycircle" }]
 readme = "README.md"
 requires-python = ">=3.10"
-dependencies = [
-    "bs4>=0.0.2",
-    "networkx>=3.4.2",
-    "numpy>=2.2.6",
-    "requests>=2.30",
-    "typer>=0.20.0",
-    "z3-solver>=4.15.4.0",
-]
+dependencies = ["bs4>=0.0.2", "requests>=2.30", "typer>=0.20.0"]
 
 [project.optional-dependencies]
-lint = [
-    "codespell>=2.4.1",
-    "isort>=7.0.0",
-    "mypy>=1.19.1",
-    "ruff>=0.13.2",
-]
+dev = ["networkx>=3.4.2", "numpy>=2.2.6", "z3-solver>=4.15.4.0"]
+lint = ["codespell>=2.4.1", "mypy>=1.19.1", "pylint>=4.0.4", "ruff>=0.13.2"]
 
 [project.scripts]
-aoc = "cli.cli:app"
+aoc = "advent_of_code.cli.main:main"
+
+[tool.pylint.main]
+py-version = "3.10"
+init-import = true
+disable = [
+    "global-statement",
+    "invalid-name",
+    "too-few-public-methods",
+    "too-many-ancestors",
+    "too-many-instance-attributes",
+    "too-many-locals",
+    "too-many-public-methods",
+    "wrong-import-order",
+    "line-too-long",
+    "missing-module-docstring",
+]
+enable = [
+    "raw-checker-failed",
+    "bad-inline-option",
+    "deprecated-pragma",
+    "use-symbolic-message-instead",
+    "use-implicit-booleaness-not-comparison-to-string",
+    "useless-option-value",
+]
+load-plugins = [
+    "pylint.extensions.bad_builtin",
+    "pylint.extensions.check_elif",
+    "pylint.extensions.comparison_placement",
+    "pylint.extensions.docparams",
+    "pylint.extensions.for_any_all",
+    "pylint.extensions.overlapping_exceptions",
+    "pylint.extensions.set_membership",
+    "pylint.extensions.typing",
+]
+runtime-typing = true
+score = true
+fail-under = 9.0
+
+[tool.pylint.typecheck]
+ignored-modules = ["networkx", "requests"]
+
+[tool.pylint.parameter_documentation]
+accept-no-param-doc = false
+accept-no-raise-doc = false
+accept-no-return-doc = false
+accept-no-yields-doc = false
+default-docstring-type = "google"
+
+[tool.pylint.similarities]
+ignore-imports = true
+ignore-docstrings = true
+min-similarity-lines = 10
+
+[tool.pylint.format]
+max-line-length = 120
 
 [tool.ruff]
 target-version = "py310"
 line-length = 120
 
 [tool.ruff.lint]
-select = ["E", "W", "I", "F", "B", "C90", "PL", "TC", "UP"]
+select = ["E", "W", "I", "F", "B", "C90", "PL", "TC", "UP", "FA"]
 ignore = [
-    "D107",    # Missing docstring in __init__
-    "E501",    # Line too long
     "PLR2004", # Magic values in comparisons
     "PLW0603", # Using 'global' to edit globals
 ]
@@ -43,9 +89,12 @@ combine-as-imports = true
 force-wrap-aliases = true
 known-first-party = []
 lines-after-imports = 2
+required-imports = ["from __future__ import annotations"]
 
 [tool.mypy]
 python_version = "3.10"
+exclude = ["tests/", "challenges/"]
+explicit_package_bases = true
 warn_unused_configs = true
 warn_redundant_casts = true
 warn_unused_ignores = true
@@ -71,26 +120,6 @@ show_column_numbers = true
 show_error_codes = true
 follow_imports = "silent"
 follow_untyped_imports = true
-
-[tool.pytest.ini_options]
-addopts = [
-    "--strict-markers",
-    "--strict-config",
-    "--junitxml=junit.xml",
-    "--cov-report=term",
-    "--cov-report=xml",
-]
-
-[tool.coverage.run]
-source = ["."]
-omit = []
-
-[tool.coverage.report]
-show_missing = true
-fail_under = 50
-
-[tool.coverage.xml]
-output = "coverage.xml"
 
 [tool.codespell]
 skip = "*/real.txt,test.txt"

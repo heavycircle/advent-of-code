@@ -1,21 +1,20 @@
 #!/usr/bin/env python3
 
-"""
---- Day 7: Some Assembly Required ---
-"""
+from __future__ import annotations
 
-import aoclib
+import sys
 
 
-stream = aoclib.get_data(day=7, year=2015).splitlines()
+stream = [s.strip() for s in iter(sys.stdin.readlines())]
 
-vv, cc = {}, {}
+vv: dict[str, int] = {}
+cc: dict[str, list[str]] = {}
 for line in stream:
     ops, res = line.split(" -> ")
     cc[res] = ops.split(" ")
 
 
-def solve(v):
+def solve(v: str) -> int:
     """Backtrack to find a value in the circuit"""
     try:
         return int(v)

@@ -1,27 +1,28 @@
+from __future__ import annotations
+
 import os
 import pathlib
 
 import typer
 
+from advent_of_code.api import ui
+
 from .fetch import fetch
-from .logger import get_logger
 from .readme import update_readme
 
 
 app = typer.Typer()
-logger = get_logger()
 
 
 @app.command()
 def init(year: int, day: int, lang: str = "py"):
     """Make a new project directory."""
 
-    logger.info("Fetching Files...")
+    ui.out_info("Fetching Files...")
     if not fetch(year, day):
-        logger.error("Could not fetch input files!")
         return False
 
-    logger.info("Making Directories...")
+    ui.out_info("Making Directories...")
     dir_name = f"{year:04}/day-{day:02}"
     os.makedirs(dir_name, exist_ok=True)
     for file in ("real.txt", "test.txt"):

@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
+from __future__ import annotations
 
 import sys
 
 import numpy as np
+
+from advent_of_code.api import ui
 
 
 data = iter(sys.stdin.readline, "")
@@ -27,5 +30,5 @@ for ln in data:
         two += 1
 
 
-print(f"ONE: {one}")
-print(f"TWO: {two}")
+ui.out_success(f"ONE: {one}")
+ui.out_success(f"TWO: {two}")

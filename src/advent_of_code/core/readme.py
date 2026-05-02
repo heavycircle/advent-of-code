@@ -1,11 +1,11 @@
+from __future__ import annotations
+
 import collections as cl
 import pathlib
 import re
 
-from .logger import get_logger
+from advent_of_code.api import AdventError, ui
 
-
-logger = get_logger()
 
 LANG_MAP = {".py": "Python", ".c": "C", ".bash": "Bash", ".asm": "ASM"}
 
@@ -27,8 +27,7 @@ def count_solves() -> dict[str, int]:
 
 def update_readme():
     if not README.exists():
-        logger.error(f"{README} not found!")
-        return
+        raise AdventError(f"{README} not found!")
     content = README.read_text()
 
     counts = count_solves()
@@ -42,9 +41,9 @@ def update_readme():
 
             tmp_content = re.sub(pattern, replace, new_content)
             if new_content == tmp_content:
-                logger.warning(f"Could not update solve count for {lang}")
+                ui.out_warning(f"Could not update solve count for {lang}")
 
             new_content = tmp_content
 
     README.write_text(new_content)
-    logger.info("README Updated")
+    ui.out_success("README Updated")
