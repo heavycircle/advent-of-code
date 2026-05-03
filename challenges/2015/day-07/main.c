@@ -134,7 +134,6 @@ void do_line(char *op, char *res)
 
 long process_file(char *file, char *init_key, long init_val)
 {
-    // Lazily not validating here ...
     FILE *fp = fopen(file, "r");
     if (fp == NULL)
     {
@@ -175,6 +174,12 @@ long process_file(char *file, char *init_key, long init_val)
 
 int main(int argc, char *argv[])
 {
+    if (argc != 2)
+    {
+        fprintf(stderr, "Usage: %s <file>\n", argv[0]);
+        exit(1);
+    }
+
     long one = process_file(argv[1], NULL, 0);
     printf("ONE: %ld\n", one);
 
