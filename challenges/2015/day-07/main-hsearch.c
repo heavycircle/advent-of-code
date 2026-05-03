@@ -1,18 +1,10 @@
 #include <ctype.h>
+#include <search.h> // This might be cheating ...
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
 #define TARGET "a"
-
-typedef struct node
-{
-    char *key;
-    long data;
-    struct node *next;
-} node_t;
-
-node_t *map;
 
 char *strip(char *str)
 {
@@ -41,14 +33,10 @@ long hash_get(char *key)
     if (*key != '\0' && *endptr == '\0')
         return num & 0xffff;
 
-    // Check the map
-    node_t *ptr = map;
-    while (ptr != NULL)
-    {
-        if (strcmp(ptr->key, key) == 0)
-            return ptr->data & 0xffff;
-        ptr = ptr->next;
-    }
+    // Check the hash table
+    ENTRY *ep = hsearch((ENTRY) { .key = key }, FIND);
+    if (ep != NULL)
+        return (long)ep->data & 0xffff;
 
     // Could not resolve
     return -1;
@@ -56,36 +44,12 @@ long hash_get(char *key)
 
 void hash_set(char *key, long val)
 {
-    node_t *tmp = calloc(1, sizeof(node_t));
-    tmp->key = strdup(key);
-    tmp->data = val;
+    ENTRY e = { .key = strdup(key), .data = (void *)val };
 
-    // Base case
-    if (map == NULL)
+    if (hsearch(e, ENTER) == NULL)
     {
-        map = tmp;
-        return;
-    }
-
-    // End case
-    node_t *ptr = map;
-    while (ptr->next != NULL)
-        ptr = ptr->next;
-    ptr->next = tmp;
-}
-
-void hash_free(void)
-{
-    if (map == NULL)
-        return;
-
-    node_t *tmp = map;
-    while (tmp != NULL)
-    {
-        map = tmp->next;
-        free(tmp->key);
-        free(tmp);
-        tmp = map;
+        fprintf(stderr, "hash_set: failed: key='%s' val=%ld\n", key, val);
+        exit(1);
     }
 }
 
@@ -142,6 +106,7 @@ long process_file(char *file, char *init_key, long init_val)
         exit(1);
     }
 
+    hcreate(26 * 26);
     if (init_key != NULL)
         hash_set(init_key, init_val);
 
@@ -166,8 +131,8 @@ long process_file(char *file, char *init_key, long init_val)
         }
     }
 
-    hash_free();
     free(line);
+    hdestroy();
     fclose(fp);
 
     return res;
